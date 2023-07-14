@@ -4,11 +4,15 @@ declare(strict_types=1);
 
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use function Pest\Laravel\get;
+
+beforeEach(function (): void {
+    $this->user = User::factory()->create();
+});
 
 test('login screen can be rendered', function (): void {
-    $response = $this->get('/login');
-
-    $response->assertStatus(200);
+    get('/login')
+        ->assertStatus(200);
 });
 
 test('users can authenticate using the login screen', function (): void {
