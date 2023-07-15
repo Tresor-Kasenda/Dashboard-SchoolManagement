@@ -11,12 +11,13 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="">
+<body>
+
 <nav
-    class="px-24 py-4 relative items-center bg-gradient-to-br from-gray-100 to-slate-100 justify-between sm:flex selection:text-white hover:shadow-amber-50">
+    class="px-24 py-4 relative items-center bg-gradient-to-br from-gray-100 to-slate-100 justify-between sm:flex selection:text-white">
     <h1>
         <a href="#"
-           class="text-4xl font-medium text-gray-900 hover:cursor-pointer hover:transition hover:ease-out hover:duration-200 pt-4 first-letter:text-bold first-letter:text-indigo-600 dark:text-gray-400 dark:hover:text-white">kasenda</a>
+           class="text-4xl font-medium select-none text-gray-900 font-sans hover:cursor-pointer hover:transition hover:ease-out hover:duration-200 pt-4 first-letter:text-bold first-letter:text-indigo-600 dark:text-gray-400 dark:hover:text-white">kasenda</a>
     </h1>
 
     <ul class="flex items-center space-x-6">
@@ -33,8 +34,12 @@
     </ul>
 </nav>
 
-<section class="bg-slate-100 pt-10">
-    <div class="max-w-5xl w-full mx-auto px-4 py-2 lg:px-4 lg:py-4">
+<section class="relative bg-slate-100 pt-10">
+    <div
+        class="absolute top-52 left-72 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-50 bg-purple-300 animate-blob"></div>
+    <div
+        class="absolute bottom-4 left-52 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl  opacity-70 bg-pink-300 animate-blob"></div>
+    <div class="relative max-w-5xl w-full mx-auto px-4 py-2 lg:px-4 lg:py-4">
         <h1 class="text-5xl font-bold text-gray-900 dark:text-white text-center justify-center">
             We're committed to bringing world-class, passionate <span class="text-rose-400">professionals</span>
             together to
@@ -48,7 +53,7 @@
             passionate professionals together to push new bundaries and grow.
         </p>
 
-        <ul class="flex flex-row justify-between">
+        <ul class="flex flex-row justify-between pb-4">
             <li>
                 <a href="#"
                    class="text-lg hover:bg-gray-800 hover:text-white px-3 py-2 rounded-lg hover:shadow-sm transition hover:ease-in-out hover:duration-300">View
@@ -249,6 +254,7 @@
                 </div>
             </div>
         </div>
+
         <div class="py-4">
             <div
                 class="bg-white rounded-lg shadow-md ring-1 hover:ring-1 hover:ring-blue-200 hover:transition hover:ease-in hover:duration-200 border-none px-6 py-4 border-2">
@@ -298,20 +304,19 @@
 <footer class="bg-white">
     <div class="max-w-5xl mx-auto py-10 items-center text-center justify-center">
         <h1 class="text-xl font-medium text-slate-500">Trusted by leading Software worldwide</h1>
-
         <ul class="flex flex-row gap-4 justify-center text-center mt-8">
-            <li class="text-slate-500 font-light text-md">Job</li>
-            <li class="text-slate-500 font-light text-md">Consultants</li>
-            <li class="text-slate-500 font-light text-md">Contact</li>
-            <li class="text-slate-500 font-light text-md">Twitter</li>
+            <li class="text-slate-500 font-light text-md cursor-pointer">Job</li>
+            <li class="text-slate-500 font-light text-md cursor-pointer">Consultants</li>
+            <li class="text-slate-500 font-light text-md cursor-pointer">Contact</li>
+            <li class="text-slate-500 font-light text-md cursor-pointer">Twitter</li>
         </ul>
     </div>
     <hr class="text-gray-700">
     <div class="max-w-7xl mx-auto py-6">
         <div class="flex justify-between items-center px-6">
-            <a href="#" class="text-sm text-indigo-950  hover:underline hover:underline-offset-8 capitalize">Created by
-                Tresor
-                Kasenda</a>
+            <a href="#" class="text-sm text-indigo-950  hover:underline hover:underline-offset-8 capitalize">
+                Created by Tresor Kasenda
+            </a>
 
             <a href="#">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"

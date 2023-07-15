@@ -4,11 +4,18 @@ declare(strict_types=1);
 
 use App\Models\University;
 use App\Models\User;
+use Database\Seeders\RoleSeeder;
 use Illuminate\Support\Arr;
 use function Pest\Laravel\actingAs;
+use function Pest\Laravel\get;
 
 beforeEach(function (): void {
     $this->user = User::factory()->create();
+});
+
+it('show add university page', function (): void {
+    get(route('university.index'))
+        ->assertRedirect();
 });
 
 it('show de route of university controller', function (): void {
@@ -16,6 +23,7 @@ it('show de route of university controller', function (): void {
         ->get(route('university.index'))
         ->assertRedirect();
 });
+
 
 it('show information of users attached to university', function (): void {
     actingAs($this->user)
@@ -34,6 +42,8 @@ it('show information of users attached to university', function (): void {
 });
 
 it('store university in database', function (): void {
+    $this->seed(RoleSeeder::class);
+    Event::fake();
     actingAs($this->user)
         ->post(route('university.store'), [
             'name' => 'University of the Philippines',
@@ -45,6 +55,8 @@ it('store university in database', function (): void {
         ])
         ->assertRedirect()
         ->assertSessionHas('success', 'University created successfully.');
+
+    Event::assertDispatched('eloquent.created: App\Models\University');
 
     expect(University::query()->count())
         ->toBe(1);
