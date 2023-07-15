@@ -11,10 +11,14 @@ use Illuminate\Http\Request;
 class UniversityController extends Controller
 {
     /**
-     * Handle the incoming request.
+     * @param  Request  $request
+     * @return View
      */
     public function __invoke(Request $request): View
     {
-        return view('admins.university.index');
+        if (auth()->user()->university_id === null) {
+            return view('admins.university.index');
+        }
+        return view('');
     }
 }

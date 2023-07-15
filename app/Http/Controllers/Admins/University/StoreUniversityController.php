@@ -18,6 +18,6 @@ class StoreUniversityController extends Controller
 
     public function __invoke(StoreUniversityRequest $request)
     {
-        dd($request);
+        
     }
 }
