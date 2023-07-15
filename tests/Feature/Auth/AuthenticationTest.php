@@ -2,36 +2,41 @@
 
 declare(strict_types=1);
 
+use App\Enums\StatusEnum;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
+
 use function Pest\Laravel\get;
+use function Pest\Laravel\post;
 
 beforeEach(function (): void {
     $this->user = User::factory()->create();
 });
 
-test('login screen can be rendered', function (): void {
+it('login screen can be rendered', function (): void {
+    $this->user->status = StatusEnum::ACTIVE->value;
+    $this->user->save();
+
     get('/login')
         ->assertStatus(200);
 });
 
-test('users can authenticate using the login screen', function (): void {
-    $user = User::factory()->create();
-
-    $response = $this->post('/login', [
-        'email' => $user->email,
+it('users can authenticate using the login screen', function (): void {
+    $this->user->status = StatusEnum::ACTIVE->value;
+    $this->user->save();
+    post('/login', [
+        'email' => $this->user->email,
         'password' => 'password',
-    ]);
+    ])->assertRedirect(RouteServiceProvider::HOME);
 
     $this->assertAuthenticated();
-    $response->assertRedirect(RouteServiceProvider::HOME);
 });
 
-test('users can not authenticate with invalid password', function (): void {
-    $user = User::factory()->create();
-
-    $this->post('/login', [
-        'email' => $user->email,
+it('users can not authenticate with invalid password', function (): void {
+    $this->user->status = StatusEnum::ACTIVE->value;
+    $this->user->save();
+    post(route('login'), [
+        'email' => $this->user->email,
         'password' => 'wrong-password',
     ]);
 

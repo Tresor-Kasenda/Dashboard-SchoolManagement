@@ -2,41 +2,40 @@
 
 declare(strict_types=1);
 
+use App\Enums\StatusEnum;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
-test('password can be updated', function (): void {
-    $user = User::factory()->create();
+use function Pest\Laravel\actingAs;
 
-    $response = $this
-        ->actingAs($user)
+beforeEach(function (): void {
+    $this->user = User::factory()->create();
+    $this->user->status = StatusEnum::ACTIVE->value;
+    $this->user->save();
+});
+
+it('password can be updated', function (): void {
+    actingAs($this->user)
         ->from('/profile')
         ->put('/password', [
             'current_password' => 'password',
             'password' => 'new-password',
             'password_confirmation' => 'new-password',
-        ]);
-
-    $response
+        ])
         ->assertSessionHasNoErrors()
         ->assertRedirect('/profile');
 
-    $this->assertTrue(Hash::check('new-password', $user->refresh()->password));
+    $this->assertTrue(Hash::check('new-password', $this->user->refresh()->password));
 });
 
-test('correct password must be provided to update password', function (): void {
-    $user = User::factory()->create();
-
-    $response = $this
-        ->actingAs($user)
+it('correct password must be provided to update password', function (): void {
+    actingAs($this->user)
         ->from('/profile')
         ->put('/password', [
             'current_password' => 'wrong-password',
             'password' => 'new-password',
             'password_confirmation' => 'new-password',
-        ]);
-
-    $response
+        ])
         ->assertSessionHasErrorsIn('updatePassword', 'current_password')
         ->assertRedirect('/profile');
 });

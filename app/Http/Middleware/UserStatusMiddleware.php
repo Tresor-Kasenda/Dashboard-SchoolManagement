@@ -18,10 +18,13 @@ class UserStatusMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (StatusEnum::ACTIVE !== $request->user()->status) {
-            return response()->json([
-                'message' => 'Your account is not active.',
-            ], 403);
+
+        //verify if status of user is activated or not redirect to login page
+        if ($request->user() && StatusEnum::ACTIVE !== $request->user()->status) {
+            auth()->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect()->route('login')->with('error', 'Your account is not activated.');
         }
         return $next($request);
     }

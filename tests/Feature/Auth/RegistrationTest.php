@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Models\University;
 use App\Providers\RouteServiceProvider;
+
 use function Pest\Laravel\get;
 use function Pest\Laravel\post;
 

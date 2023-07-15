@@ -14,14 +14,12 @@ class UniversityMiddleware
     /**
      * Handle an incoming request.
      *
-     * @param  Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * @param  Closure(Request): (Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (null === Auth::user()->university) {
-            return redirect()
-                ->route('university.create')
-                ->with('danger', 'You need to create a university first');
+        if (null === Auth::user()->university_id) {
+            return redirect()->route('university.create');
         }
 
         return $next($request);
