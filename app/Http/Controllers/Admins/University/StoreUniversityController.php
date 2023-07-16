@@ -18,8 +18,8 @@ class StoreUniversityController extends Controller
     ) {
     }
 
-    public function __invoke(StoreUniversityRequest $request)
+    public function __invoke(StoreUniversityRequest $request): void
     {
-        
+
     }
 }

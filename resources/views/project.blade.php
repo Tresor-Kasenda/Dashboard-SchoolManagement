@@ -41,7 +41,7 @@
     <div
         class="absolute -top-32 -left-64 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-50 bg-purple-300 animate-blob"></div>
     <div
-        class="absolute bottom-10 left-2/3 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl  opacity-40 bg-pink-300 animate-blob"></div>
+        class="absolute bottom-10 left-2/3 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl  opacity-30 bg-pink-300 animate-blob"></div>
     <div class="text-left py-12 flex-row w-2/2">
         <h1 class="text-5xl font-bold font-sans text-gray-700">
             Used the world's <span class="text-blue-600">innovative</span> businesses to create best digital <span
@@ -123,23 +123,132 @@
     </div>
 </section>
 
-<section class="py-6 bg-gray-100 relative">
+<section class="py-6 bg-gray-100">
     <div class="max-w-6xl mx-auto py-4 flex flex-row justify-between">
-        <div class="relative ml-4">
-            <div
-                class="absolute bottom-10 -left-1 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl  opacity-20 bg-pink-300 animate-blob"></div>
-            <img src="{{ asset('images/g.png') }}"
-                 class="w-2/4 object-cover hover:shadow hover:bg-slate-200 transition ease-in duration-500" alt="">
-        </div>
-        <div class="">
-
+        <img src="{{ asset('images/gfx-a.png') }}"
+             class="w-6/12 object-cover transition ease-in duration-500" alt="">
+        <div class="space-x-4 py-4 w-1/2">
+            <h2 class="text-4xl font-bold text-blue-400 leading-10">
+                Some unique features and awesome experience
+            </h2>
+            <div class="py-5 flex flex-col">
+                <div
+                    class="flex flex-row items-center gap-5 py-2">
+                    <div class="py-4">
+                        <svg class="w-10 h-10 text-blue-400 dark:text-white" aria-hidden="true"
+                             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="0.8"
+                                  d="M17 4c0 1.657-3.582 3-8 3S1 5.657 1 4m16 0c0-1.657-3.582-3-8-3S1 2.343 1 4m16 0v6M1 4v6m0 0c0 1.657 3.582 3 8 3s8-1.343 8-3M1 10v6c0 1.657 3.582 3 8 3s8-1.343 8-3v-6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-500 py-4">Easy to manage</h2>
+                        <p class="text-slate-500 font-sans font-normal">
+                            Many variations of passages of Lorem Ipsum available, but the majority have suffered
+                            alteration.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex flex-row items-center gap-5 mt-1">
+                    <div class="py-4">
+                        <svg
+                            class="w-10 h-10 text-blue-400 dark:text-white transition ease-in-out duration-500 hover:w-12 hover:h-12"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 18">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="0.8" d="M1 12v5m5-9v9m5-5v5m5-9v9M1 7l5-6 5 6 5-6"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-gray-500 py-4">Advanced Statistics</h2>
+                        <p class="text-slate-500 font-sans font-normal">
+                            Slightly variations of passages available the majority have suffered alteration even
+                            slightly believable.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
 
-<!--generate 4 cards with different prince-->
-<section class="py-6 relative">
-
+<section class="px-6">
+    <div class="max-w-3xl mx-auto py-2">
+        <h2 class="text-gray-700 text-center text-4xl">Choose Your Plan</h2>
+        <p class="text-center py-5 text-slate-500">
+            But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and
+            I will give you a complete account of the system, the master-builder of human happiness.
+        </p>
+    </div>
+    <div class="max-w-5xl mx-auto py-6 flex flex-row items-center justify-between">
+        <div class="shadow bg-white py-6 px-10 border rounded-md text-left ring-1 hover:border-green-500">
+            <h2 class="text-3xl font-medium font-sans text-gray-700">Basic</h2>
+            <div class="py-5">
+                <span class="text-4xl text-gray-600 font-bold">$</span>
+                <span class="text-4xl text-gray-600 font-bold">0</span>
+                <span class="text-gray-500">/mo</span>
+            </div>
+            <div class="py-7">
+                <ul class="list-disc list-inside">
+                    <li>1 GB of space</li>
+                    <li>Support at $25/hour</li>
+                    <li>1 Domain</li>
+                    <li>10 GB Bandwidth</li>
+                </ul>
+            </div>
+            <div class="py-4 text-center">
+                <button
+                    class="border border-green-500 text-black font-bold py-2 px-4 rounded-md">
+                    Get Started
+                </button>
+            </div>
+        </div>
+        <div class="shadow bg-white py-6 px-20 border rounded-md text-left ring-1 hover:border-green-500">
+            <h2 class="text-3xl font-medium font-sans text-gray-700">Basic</h2>
+            <div class="py-5">
+                <span class="text-4xl text-gray-600 font-bold">$</span>
+                <span class="text-4xl text-gray-600 font-bold">0</span>
+                <span class="text-gray-500">/mo</span>
+            </div>
+            <div class="py-7">
+                <ul class="list-disc list-inside">
+                    <li>1 GB of space</li>
+                    <li>Support at $25/hour</li>
+                    <li>1 Domain</li>
+                    <li>10 GB Bandwidth</li>
+                </ul>
+            </div>
+            <div class="py-4 text-center w-full">
+                <button
+                    class="border border-green-500 text-black font-bold py-2 px-4 w-full rounded-md">
+                    Get Started
+                </button>
+            </div>
+        </div>
+        <div class="shadow bg-white py-6 px-10 border rounded-md text-left ring-1 hover:border-green-500">
+            <h2 class="text-3xl font-medium font-sans text-gray-700">Basic</h2>
+            <div class="py-5">
+                <span class="text-4xl text-gray-600 font-bold">$</span>
+                <span class="text-4xl text-gray-600 font-bold">0</span>
+                <span class="text-gray-500">/mo</span>
+            </div>
+            <div class="py-7">
+                <ul class="list-disc list-inside">
+                    <li>1 GB of space</li>
+                    <li>Support at $25/hour</li>
+                    <li>1 Domain</li>
+                    <li>10 GB Bandwidth</li>
+                </ul>
+            </div>
+            <div class="py-4 text-center">
+                <button
+                    class="border border-green-500 text-black font-bold py-2 px-4 rounded-md">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </div>
 </section>
 
 <footer>
