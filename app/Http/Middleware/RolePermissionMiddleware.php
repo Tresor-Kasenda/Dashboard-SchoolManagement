@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
 use Auth;
@@ -16,13 +18,13 @@ class RolePermissionMiddleware
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        if (!Auth::check()) {
+        if ( ! Auth::check()) {
             return redirect()
                 ->route('login')
                 ->with('error', 'You must be logged in!');
         }
 
-        if (!$request->user()->hasRole($role)->exists()) {
+        if ( ! $request->user()->hasRole($role)->exists()) {
             return redirect()
                 ->route('home')
                 ->with('error', 'You do not have permission to access!');

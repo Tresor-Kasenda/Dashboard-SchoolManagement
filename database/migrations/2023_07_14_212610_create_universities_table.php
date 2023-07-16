@@ -15,10 +15,10 @@ return new class () extends Migration {
         Schema::create('universities', function (Blueprint $table): void {
             $table->id();
             $table->string('name')->unique();
-            $table->string('initials')->nullable();
+            $table->string('initials')->nullable()->unique();
             $table->string('address')->nullable();
-            $table->string('email')->nullable();
-            $table->string('phone')->nullable();
+            $table->string('email')->nullable()->unique();
+            $table->string('phone')->nullable()->unique();
             $table->string('code');
             $table->timestamps();
             $table->softDeletes();

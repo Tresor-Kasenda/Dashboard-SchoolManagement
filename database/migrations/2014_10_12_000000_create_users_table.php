@@ -20,7 +20,7 @@ return new class () extends Migration {
             $table->string('firstname');
             $table->string('email')->unique();
             $table->string('phone_number')->unique()->nullable();
-            $table->string('status')->default(StatusEnum::ACTIVE->value);
+            $table->boolean('status')->default(StatusEnum::ACTIVE->value);
             $table->timestamp('email_verified_at')->nullable();
             $table->foreignId('feature_image_id')->index()->nullable();
             $table->string('password');

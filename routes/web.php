@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Admins\Sessions\SessionController;
 use App\Http\Controllers\Admins\University\StoreUniversityController;
 use App\Http\Controllers\Admins\University\UniversityController;
 use App\Http\Controllers\ProfileController;
@@ -9,12 +10,12 @@ use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('welcome'));
+Route::get('/', fn () => view('welcome'));
 
-Route::get('project', fn() => view('project'));
+Route::get('project', fn () => view('project'));
 
 
-Route::get('/dashboard', fn() => view('dashboard'))->middleware([
+Route::get('/dashboard', fn () => view('dashboard'))->middleware([
     'auth', 'verified', UserStatusMiddleware::class
 ])->name('dashboard');
 
@@ -25,6 +26,8 @@ Route::middleware(['auth', UserStatusMiddleware::class, UniversityMiddleware::cl
 
     Route::get('university', UniversityController::class)->name('university.index');
     Route::post('university', StoreUniversityController::class)->name('university.store');
+
+    Route::get('sessions', SessionController::class)->name('sessions.index');
 });
 
 

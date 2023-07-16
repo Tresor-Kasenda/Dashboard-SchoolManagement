@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use App\Models\University;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -16,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-
+        University::class => User::class,
     ];
 
     /**
@@ -24,6 +26,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::before(fn ($user, $ability) => $user->hasRole('Super Admin') ? true : null);
+        Gate::before(fn ($user, $ability) => $user->hasRole('super-admin') ? true : null);
     }
 }

@@ -6,6 +6,7 @@ namespace App\Http\Requests;
 
 use App\Models\University;
 use App\Models\User;
+use Illuminate\Contracts\Validation\ValidationRule;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Exists;
 use Illuminate\Validation\Rules\Password;
@@ -23,7 +24,7 @@ class StoreUserRequest extends FormRequest
     /**
      * Get the validation rules that apply to the request.
      *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array|string>
+     * @return array<string, ValidationRule|array|string>
      */
     public function rules(): array
     {
@@ -32,9 +33,9 @@ class StoreUserRequest extends FormRequest
             'username' => ['required', 'string', 'max:255'],
             'firstname' => ['required', 'string', 'max:255'],
             'phone_number' => ['required', 'string', 'max:255', 'unique:'.User::class],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Password::defaults()],
-            'university' => ['required', 'integer', new Exists(University::class, 'id')],
+            'university' => ['nullable', 'integer', new Exists(University::class, 'id')],
         ];
     }
 }

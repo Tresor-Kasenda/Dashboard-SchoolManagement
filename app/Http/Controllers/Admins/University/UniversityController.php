@@ -16,9 +16,8 @@ class UniversityController extends Controller
      */
     public function __invoke(Request $request): View
     {
-        if (auth()->user()->university_id === null) {
-            return view('admins.university.index');
-        }
-        return view('');
+        return null === auth()->user()->university_id ?
+            view('admins.university.index') :
+            view('admins.sessions.index');
     }
 }
