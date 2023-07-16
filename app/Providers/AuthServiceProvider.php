@@ -15,7 +15,7 @@ class AuthServiceProvider extends ServiceProvider
     /**
      * The model to policy mappings for the application.
      *
-     * @var array<class-string, class-string>
+     * @var array<string, string>
      */
     protected $policies = [
         University::class => User::class,
@@ -26,6 +26,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::before(fn ($user, $ability) => $user->hasRole('super-admin') ? true : null);
+        Gate::before(fn($user, $ability) => $user->hasRole('super-admin') ? true : null);
     }
 }
