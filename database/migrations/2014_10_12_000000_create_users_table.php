@@ -23,6 +23,7 @@ return new class () extends Migration {
             $table->boolean('status')->default(StatusEnum::ACTIVE->value);
             $table->timestamp('email_verified_at')->nullable();
             $table->foreignId('feature_image_id')->index()->nullable();
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

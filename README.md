@@ -1,17 +1,20 @@
 # VINCO ADMINISTRATTION
 
-Vinco est une solution adapter aux ecoles et aux universites parce qu'elle permet de gerer 
+Vinco est une solution adapter aux ecoles et aux universites parce qu'elle permet:
+
 - Un bon deroulement des cours et la structuration des institutions d'enseignement
-- Une gestion de communication grace a une email interne 
-- une bonne gestion de communication des etudiants et les professeurs 
+- Une gestion de communication grace a une email interne, messagerie interne,
+- une mise en relation entre des etudiants et les professeurs grace a un messagerie et un mini reseau social temps reel
 - un moyen facile de consulter facilement l'horaire, note d'examen, depot de tp,
+- une communication entre ecole et les parents
+- un moyen de faire des etudes en lignes
 
 ## Procesuss de deroulement du projet
-- Definir le besoin fonctionnel de la plateforme 
+
+- Definir le besoin fonctionnel de la plateforme
 - Elaborer les cas d'utilisateur
-- Subdiviser les taches en sous
+- Subdiviser les taches en sous taches en utilisant le principe ```diviser pour mieux regner```
 - Definir les relations entre chaque cas d'utilisateur
-- 
 
 ## **Fonctionnalite**
 
@@ -21,7 +24,7 @@ Vinco est une solution adapter aux ecoles et aux universites parce qu'elle perme
 - [ ]  Definir l'annee academique (scolaire)
 - [ ]  Acceder au dashboard
 - [ ]  gestion des roles et autorisation
-- [ ]  Gestion des utilisateurs 
+- [ ]  Gestion des utilisateurs
 - [ ]  parametre du logiciels
 - [ ]  gestion des campus
 - [ ]  gestion des departements
