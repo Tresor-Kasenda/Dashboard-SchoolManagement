@@ -19,7 +19,7 @@ class UniversityMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         if (null === Auth::user()->university_id) {
-            return redirect()->route('university.create');
+            return to_route('university.index');
         }
 
         return $next($request);

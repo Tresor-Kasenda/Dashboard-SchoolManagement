@@ -11,70 +11,71 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-slate-50">
+<body class="font-sans text-gray-900 antialiased">
 <nav class="p-4 flex relative max-w-6xl mx-auto items-center justify-between">
     <h1 class="text-4xl font-bold text-gray-800 first-letter:text-teal-600 hover:text-teal-900 dark:text-white cursor-pointer">
-        <a href="#">
+        <a href="{{ route('home') }}">
             Vinco
         </a>
     </h1>
-    <ul class="flex space-x-4 items-center">
+    <ul class="space-x-4 items-center tracking-wide text-base lg:flex lg:text-sm sm:hidden md:block">
         <li>
             <a href="#"
-               class="text-xl font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
+               class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
                 Home
             </a>
         </li>
         <li>
             <a href="#"
-               class="text-xl font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
+               class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
                 About
             </a>
         </li>
         <li>
             <a href="#"
-               class="text-xl font-medium rounded-lg bg-teal-400/80 hover:bg-teal-600 transition duration-700 ease-in-out hover:right-2 text-white px-4 py-2">
+               class="text-base font-medium rounded-lg bg-teal-400/80 hover:bg-teal-600 transition duration-700 ease-in-out hover:right-2 text-white px-4 py-3">
                 Contact
             </a>
         </li>
     </ul>
 </nav>
 
-<section class="max-w-6xl mx-auto flex justify-between items-center relative pb-3">
+<section class="max-w-6xl mx-auto flex justify-between items-center relative py-8 px-4">
     <div
-        class="absolute -top-32 -left-64 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl opacity-50 bg-purple-300 animate-blob"></div>
-    <div
-        class="absolute bottom-10 left-2/3 w-72 h-72 rounded-full mix-blend-multiply filter blur-xl  opacity-30 bg-pink-300 animate-blob"></div>
-    <div class="text-left py-12 flex-row w-2/2">
-        <h1 class="text-5xl font-bold font-sans text-gray-700">
-            Used the world's <span class="text-blue-600">innovative</span> businesses to create best digital <span
-                class="text-teal-600">products</span>
-            experiences.
-        </h1>
+        class="flex-1 grid grid-cols-2 relative gap-4 max-sm:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 sm:mx-auto  lg:grid-cols-2 lg:gap-8">
+        <div class="text-left sm:text-center md:text-left space-y-8">
+            <h1 class="text-5xl font-bold font-sans text-gray-700">
+                Used the world's <span
+                    class="text-transparent bg-gradient-to-br  from-blue-800 to-indigo-400 bg-clip-text">innovative</span>
+                businesses to
+                create best digital <span
+                    class="text-teal-600">products</span>
+                experiences.
+            </h1>
+            <p class="font-sans text-gray-700 font-medium shrink leading-8 text-left text-lg">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae deleniti expedita iste
+                nesciunt
+                non odio odit officiis soluta vel! Ab dolor eligendi ex expedita harum ipsum tempore ullam, voluptatum?
+            </p>
 
-        <p class="py-10 font-sans text-gray-700 font-medium shrink leading-8 text-left">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae deleniti expedita iste nesciunt
-            non odio odit officiis soluta vel! Ab dolor eligendi ex expedita harum ipsum tempore ullam, voluptatum?
-        </p>
-
-        <div class="flex justify-start items-center space-x-8 py-6">
-            <a href="#"
-               class="px-5 py-3 font-medium bg-blue-500 outline-offset-1 text-white rounded-full hover:bg-blue-700 hover:text-white dark:hover:text-white transition ease-in duration-500 hover:right-2">
-                Try it now
-            </a>
-            <a href="#"
-               class="font-sans font-medium bg-teal-200 px-4 py-3 rounded-full text-gray-700 hover:bg-teal-600 hover:text-white transition  ease-in-out duration-500 hover:shadow">
-                Explore more
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                     stroke="currentColor" class="w-5 h-5 hover:text-white inline-block ml-2">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
-                </svg>
-            </a>
+            <div class="flex justify-start items-center sm:justify-center md:justify-start md:gap-8">
+                <a href="{{ route('register') }}"
+                   class="px-5 py-3 font-medium bg-blue-500 outline-offset-1 text-white rounded-full hover:bg-blue-700 hover:text-white dark:hover:text-white transition ease-in duration-500 hover:right-2">
+                    Try it now
+                </a>
+                <a href="#"
+                   class="font-sans font-medium bg-teal-200 px-4 py-3 rounded-full text-gray-700 hover:bg-teal-600 hover:text-white transition  ease-in-out duration-500 hover:shadow">
+                    Explore more
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                         stroke="currentColor" class="w-5 h-5 hover:text-white inline-block ml-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                              d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
+                    </svg>
+                </a>
+            </div>
         </div>
-    </div>
-    <div class="space-x-8 w-full">
-        <img src="{{ asset('images/h.png') }}" alt="" class="w-full object-cover h-3/5 hover:shadow-sm">
+        <img src="{{ asset('images/h.png') }}" alt=""
+             class="w-full object-cover h-2/3 inset-0 overflow-hidden hover:shadow-sm">
     </div>
 </section>
 
@@ -131,7 +132,7 @@
         <img src="{{ asset('images/gfx-a.png') }}"
              class="w-6/12 object-cover transition ease-in duration-500" alt="">
         <div class="space-x-4 py-4 w-1/2">
-            <h2 class="text-4xl font-bold text-blue-400 leading-10">
+            <h2 class="text-4xl font-bold bg-gradient-to-br from-fuchsia-800 to-indigo-400 bg-clip-text leading-10">
                 Some unique features and awesome experience
             </h2>
             <div class="py-5 flex flex-col">
@@ -178,13 +179,14 @@
 
 <section class="p-6 space-y-5">
     <div class="max-w-3xl mx-auto">
-        <h2 class="text-gray-700 text-center text-4xl">Choose Your Plan</h2>
+        <h2 class="text-gray-700 text-center text-4xl sm:text-6xl md:text-5xl lg:text-7xl">Choose Your Plan</h2>
         <p class="text-center py-5 text-slate-500">
             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and
             I will give you a complete account of the system, the master-builder of human happiness.
         </p>
     </div>
-    <div class="max-w-5xl mx-auto p-6 flex flex-row items-center justify-between">
+    <div
+        class="max-w-5xl mx-auto p-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-6">
         <div
             class="relative shadow bg-white px-10 border rounded-md text-left ring-1 hover:border-green-500">
             <h2 class="text-3xl font-medium font-sans text-gray-700 pt-4">Basic</h2>
@@ -263,7 +265,7 @@
             </p>
             <div class="flex">
                 <a href="#" class="py-2 px-4 text-gray-500 hover:text-gray-400">
-                    <svg class="w-4 h-4 text-gray-600 dark:text-white" aria-hidden="true"
+                    <svg class="w-4 h-4 text-gray-600 dark:text-white hover:text-indigo-600" aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
                         <path fill-rule="evenodd"
                               d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z"
@@ -271,7 +273,8 @@
                     </svg>
                 </a>
                 <a href="#" class="py-2 px-4 text-gray-500 hover:text-gray-400">
-                    <svg class="w-4 h-4 text-gray-600 dark:text-white" aria-hidden="true"
+                    <svg class="w-4 h-4 text-gray-600 dark:text-white hover:text-indigo-600"
+                         aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
                         <path fill-rule="evenodd"
                               d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z"
@@ -279,7 +282,7 @@
                     </svg>
                 </a>
                 <a href="#" class="py-2 px-4 text-gray-500 hover:text-gray-400">
-                    <svg class="w-4 h-4 text-gray-600 dark:text-white" aria-hidden="true"
+                    <svg class="w-4 h-4 text-gray-600 dark:text-white hover:text-indigo-600" aria-hidden="true"
                          xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 15 15">
                         <path fill-rule="evenodd"
                               d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z"

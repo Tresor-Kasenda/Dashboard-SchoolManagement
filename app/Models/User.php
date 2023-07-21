@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Arr;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -60,17 +59,6 @@ class User extends Authenticatable
         'password' => 'hashed',
         'status' => StatusEnum::class,
     ];
-
-    public function attachUniversity(): void
-    {
-        $this->university()->create([
-            'name' => 'University of the Philippines',
-            'initials' => 'UP',
-            'address' => 'University of the Philippines',
-            'email' => 'kasenda@gmail.com',
-            'code' => Arr::random(['UP', 'UPD', 'UPM', 'UPC', 'UPV',])
-        ]);
-    }
 
     public function university(): BelongsTo
     {

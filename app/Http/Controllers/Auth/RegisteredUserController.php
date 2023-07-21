@@ -9,10 +9,12 @@ use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\View\View;
 
 class RegisteredUserController extends Controller
 {
@@ -24,11 +26,7 @@ class RegisteredUserController extends Controller
     {
         $user = User::query()->create([
             'name' => $request->input('name'),
-            'username' => $request->input('username'),
-            'firstname' => $request->input('firstname'),
             'email' => $request->input('email'),
-            'phone_number' => $request->input('phone_number'),
-            'university_id' => $request->input('university'),
             'password' => Hash::make($request->input('password')),
         ]);
 
@@ -41,9 +39,9 @@ class RegisteredUserController extends Controller
     }
 
     /**
-     * Display the registration view.
+     * @return Application|Factory|View|\Illuminate\Foundation\Application
      */
-    public function create(): View
+    public function create(): Application|Factory|View|\Illuminate\Foundation\Application
     {
         return view('auth.register');
     }

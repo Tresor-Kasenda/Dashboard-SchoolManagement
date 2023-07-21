@@ -18,18 +18,11 @@ class RolePermissionMiddleware
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        if ( ! Auth::check()) {
-            return redirect()
-                ->route('login')
-                ->with('error', 'You must be logged in!');
-        }
+        return ! Auth::check() ? redirect()
+            ->route('login')
+            ->with('error', 'You must be logged in!') : ( ! $request->user()->hasRole($role)->exists() ? redirect()
+            ->route('home')
+            ->with('error', 'You do not have permission to access!') : $next($request));
 
-        if ( ! $request->user()->hasRole($role)->exists()) {
-            return redirect()
-                ->route('home')
-                ->with('error', 'You do not have permission to access!');
-        }
-
-        return $next($request);
     }
 }
