@@ -6,7 +6,6 @@ use App\Models\University;
 use App\Models\User;
 use Database\Seeders\RoleSeeder;
 use Illuminate\Support\Arr;
-
 use function Pest\Laravel\actingAs;
 use function Pest\Laravel\get;
 
@@ -24,7 +23,6 @@ it('show de route of university controller', function (): void {
         ->get(route('university.index'))
         ->assertRedirect();
 });
-
 
 it('show information of users attached to university', function (): void {
     actingAs($this->user)
