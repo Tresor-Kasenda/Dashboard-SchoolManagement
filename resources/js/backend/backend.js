@@ -1,7 +1,6 @@
 import '../bootstrap';
-import 'js/scripts.js';
-import 'js/bundle.js';
-
+import './js/bundle';
+import './js/scripts';
 
 import {createApp} from "vue";
 

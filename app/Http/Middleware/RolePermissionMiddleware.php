@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Http\Middleware;
 
-use Auth;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -18,11 +17,7 @@ class RolePermissionMiddleware
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        return ! Auth::check() ? redirect()
-            ->route('login')
-            ->with('error', 'You must be logged in!') : ( ! $request->user()->hasRole($role)->exists() ? redirect()
-            ->route('home')
-            ->with('error', 'You do not have permission to access!') : $next($request));
+        return $next($request);
 
     }
 }

@@ -30,7 +30,7 @@
     <div
         class="px-32 py-20 max-sm:px-8 max-sm:py-14 space-y-6 sm:px-10 sm:py-10 sm:col-span-2 md:col-span-1 lg:col-span-1 md:px-32 md:py-20 lg:px-32 lg:py-20">
         <div class="space-y-5">
-            <h1 class="text-4xl text-gray-700 decoration-2">
+            <h1 class="text-4xl text-gray-700 decoration-2 dark:text-white">
                 Start your <br> <span class="font-bold">30-day free trial</span>
             </h1>
         </div>
@@ -38,7 +38,7 @@
         <button
             class="w-full flex items-center justify-center shadow-md border border-blue-500 transition ease-in-out duration-500 focus:ring-1 focus:ring-indigo-500 focus:ring-offset-2 hover:text-white hover:bg-indigo-400 hover:ring-indigo-300 border-1 rounded-md py-2">
 
-                <span class="text-[16px] font-medium font-sans">
+                <span class="text-[16px] font-medium font-sans dark:text-white">
                     Sign up with google
                 </span>
         </button>

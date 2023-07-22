@@ -1,10 +1,13 @@
-<!DOCTYPE html>
+@props([
+    'title' => ''
+])
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>{{ config('app.name') ?? $title }}</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet"/>
@@ -12,47 +15,46 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans text-gray-900 antialiased">
-<nav class="p-4 flex relative max-w-6xl mx-auto items-center justify-between">
-    <h1 class="text-4xl font-bold text-gray-800 first-letter:text-teal-600 hover:text-teal-900 dark:text-white cursor-pointer">
-        <a href="{{ route('home') }}">
-            Vinco
-        </a>
-    </h1>
-    <ul class="space-x-4 items-center tracking-wide text-base lg:flex lg:text-sm sm:hidden md:block">
-        <li>
-            <a href="#"
-               class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
-                Home
+<nav class="shadow-2xl group">
+    <div class="py-5 px-4 flex relative max-w-6xl mx-auto items-center justify-between">
+        <h1 class="text-5xl font-bold text-gray-800 hover:text-teal-900 dark:text-white cursor-pointer">
+            <a href="{{ route('home') }}">
+                Vinco
             </a>
-        </li>
-        <li>
-            <a href="#"
-               class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
-                About
-            </a>
-        </li>
-        <li>
-            <a href="#"
-               class="text-base font-medium rounded-lg bg-teal-400/80 hover:bg-teal-600 transition duration-700 ease-in-out hover:right-2 text-white px-4 py-3">
-                Contact
-            </a>
-        </li>
-    </ul>
+        </h1>
+        <ul class="space-x-4 items-center tracking-wide text-base lg:flex lg:text-sm sm:hidden md:block">
+            <li>
+                <a href="#"
+                   class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
+                    Home
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                   class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
+                    About
+                </a>
+            </li>
+            <li>
+                <a href="#"
+                   class="text-base font-medium rounded-lg bg-teal-400/80 hover:bg-teal-600 transition duration-700 ease-in-out hover:right-2 text-white px-4 py-3">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </div>
 </nav>
 
-<section class="max-w-6xl mx-auto flex justify-between items-center relative py-8 px-4">
+<section class="max-w-6xl mx-auto flex justify-between items-center relative py-16 px-4">
     <div
         class="flex-1 grid grid-cols-2 relative gap-4 max-sm:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 sm:mx-auto  lg:grid-cols-2 lg:gap-8">
         <div class="text-left sm:text-center md:text-left space-y-8">
-            <h1 class="text-5xl font-bold font-sans text-gray-700">
+            <h1 class="text-6xl font-bold font-sans text-gray-700">
                 Used the world's <span
                     class="text-transparent bg-gradient-to-br  from-blue-800 to-indigo-400 bg-clip-text">innovative</span>
-                businesses to
-                create best digital <span
-                    class="text-teal-600">products</span>
-                experiences.
+                businesses
             </h1>
-            <p class="font-sans text-gray-700 font-medium shrink leading-8 text-left text-lg">
+            <p class="font-sans text-gray-700 font-medium shrink leading-8 text-left text-2xl justify-around">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae deleniti expedita iste
                 nesciunt
                 non odio odit officiis soluta vel! Ab dolor eligendi ex expedita harum ipsum tempore ullam, voluptatum?
@@ -60,7 +62,7 @@
 
             <div class="flex justify-start items-center sm:justify-center md:justify-start md:gap-8">
                 <a href="{{ route('register') }}"
-                   class="px-5 py-3 font-medium bg-blue-500 outline-offset-1 text-white rounded-full hover:bg-blue-700 hover:text-white dark:hover:text-white transition ease-in duration-500 hover:right-2">
+                   class="px-5 py-3 font-medium bg-indigo-500 outline-offset-1 text-white rounded-full hover:bg-blue-700 before:bg-indigo-700 hover:text-white dark:hover:text-white transition ease-in duration-500 hover:right-2">
                     Try it now
                 </a>
                 <a href="#"
@@ -75,7 +77,7 @@
             </div>
         </div>
         <img src="{{ asset('images/h.png') }}" alt=""
-             class="w-full object-cover h-2/3 inset-0 overflow-hidden hover:shadow-sm">
+             class="w-full object-cover h-2/3 inset-0 hover:shadow-sm">
     </div>
 </section>
 

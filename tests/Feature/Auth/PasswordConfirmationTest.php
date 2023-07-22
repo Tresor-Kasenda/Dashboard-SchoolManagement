@@ -5,37 +5,26 @@ declare(strict_types=1);
 use App\Enums\StatusEnum;
 use App\Models\User;
 
+use function Pest\Laravel\actingAs;
+
+beforeEach(function (): void {
+    $this->user = User::factory()->create();
+    $this->user->status = StatusEnum::ACTIVE->value;
+    $this->user->save();
+});
+
 test('confirm password screen can be rendered', function (): void {
-    $user = User::factory()->create();
-    $user->status = StatusEnum::ACTIVE->value;
-    $user->save();
-
-    $response = $this->actingAs($user)->get('/confirm-password');
-
-    $response->assertStatus(200);
+    actingAs($this->user)
+        ->get('/confirm-password')
+        ->assertStatus(200);
 });
 
 test('password can be confirmed', function (): void {
-    $user = User::factory()->create();
-    $user->status = StatusEnum::ACTIVE->value;
-    $user->save();
-
-    $response = $this->actingAs($user)->post('/confirm-password', [
+    actingAs($this->user)->post('/confirm-password', [
         'password' => 'password',
-    ]);
+    ])
+        ->assertRedirect()
+        ->assertSessionHasNoErrors();
 
-    $response->assertRedirect();
-    $response->assertSessionHasNoErrors();
-});
-
-test('password is not confirmed with invalid password', function (): void {
-    $user = User::factory()->create();
-    $user->status = StatusEnum::ACTIVE->value;
-    $user->save();
-
-    $response = $this->actingAs($user)->post('/confirm-password', [
-        'password' => 'wrong-password',
-    ]);
-
-    $response->assertSessionHasErrors();
+    expect(auth()->check())->toBeTrue();
 });

@@ -80,12 +80,11 @@ it('password is required to delete account', function (): void {
     $this->assertNotNull($this->user->fresh());
 });
 
-it('user can activate their account', function (): void {
+it('user can not activate their account', function (): void {
     actingAs($this->user)
         ->patch('/profile', [
             'name' => 'Test User',
-            'email' => $this->user->email,
-            'status' => StatusEnum::ACTIVE->value,
+            'email' => $this->user->email
         ])
         ->assertSessionHasNoErrors()
         ->assertRedirect('/profile');

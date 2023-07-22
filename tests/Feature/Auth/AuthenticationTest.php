@@ -29,7 +29,12 @@ it('users can authenticate using the login screen', function (): void {
         'password' => 'password',
     ])->assertRedirect(RouteServiceProvider::HOME);
 
-    $this->assertAuthenticated();
+    $this->assertAuthenticated()
+        ->assertAuthenticatedAs($this->user);
+
+    expect(auth()->user()->email)
+        ->toBe($this->user->email)
+        ->and(auth()->user()->name);
 });
 
 it('users can not authenticate with invalid password', function (): void {
@@ -41,4 +46,36 @@ it('users can not authenticate with invalid password', function (): void {
     ]);
 
     $this->assertGuest();
+
+    expect(auth()->user())
+        ->toBeNull();
+});
+
+it('users can not authenticate with invalid email', function (): void {
+    $this->user->status = StatusEnum::ACTIVE->value;
+    $this->user->save();
+    post(route('login'), [
+        'email' => '',
+        'password' => $this->user->password,
+    ])
+        ->assertSessionHasErrors('email');
+    $this->assertGuest();
+
+    expect(auth()->user())
+        ->toBeNull();
+});
+
+
+it('users can not authenticate with invalid credentials', function (): void {
+    $this->user->status = StatusEnum::ACTIVE->value;
+    $this->user->save();
+    post(route('login'), [
+        'email' => 'invalid-email',
+        'password' => 'password',
+    ]);
+
+    $this->assertGuest();
+
+    expect(auth()->user())
+        ->toBeNull();
 });

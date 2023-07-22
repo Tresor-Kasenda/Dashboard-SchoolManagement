@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class PermissionSeeder extends Seeder
 {
@@ -16,29 +17,14 @@ class PermissionSeeder extends Seeder
     {
         $permissions = [
             'view users',
-            'create users',
-            'edit users',
-            'delete users',
             'view roles',
-            'create roles',
-            'edit roles',
-            'delete roles',
             'view permissions',
-            'create permissions',
-            'edit permissions',
-            'delete permissions',
             'view university',
-            'create university',
-            'edit university',
-            'delete university',
-            'view faculty',
-            'create faculty',
-            'edit faculty',
-            'delete faculty',
-            'view department',
-            'create department',
-            'edit department',
-            'delete department'
+            'dashboard',
+            'settings',
+            'profile',
+            'header-administrate',
+            'header-academics',
         ];
 
         collect($permissions)
@@ -46,5 +32,23 @@ class PermissionSeeder extends Seeder
                 'name' => $permission,
                 'guard_name' => 'web',
             ]));
+
+        $admins = Role::query()
+            ->where('name', '=', 'super-admin')
+            ->first();
+
+        $admins->givePermissionTo(Permission::all());
+
+
+        $user = Role::query()
+            ->where('name', '=', 'user')
+            ->first();
+
+        $user->givePermissionTo([
+            'dashboard',
+            'settings',
+            'profile',
+            'header-administrate',
+        ]);
     }
 }

@@ -10,10 +10,12 @@ use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('welcome'))->name('home');
+Route::get('/', fn () => view('welcome'))->name('home');
 
-Route::get('/dashboard', fn() => view('dashboard'))->middleware([
-    'auth', 'verified', UserStatusMiddleware::class, UniversityMiddleware::class
+Route::get('/dashboard', fn () => view('dashboard'))->middleware([
+    'auth', 'verified',
+    UserStatusMiddleware::class,
+    UniversityMiddleware::class,
 ])->name('dashboard');
 
 Route::middleware(['auth', UserStatusMiddleware::class])->group(function (): void {

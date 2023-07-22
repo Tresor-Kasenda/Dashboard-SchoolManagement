@@ -18,7 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<string, string>
      */
     protected $policies = [
-        University::class => User::class,
+        User::class => University::class
     ];
 
     /**
@@ -26,6 +26,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::before(fn ($user, $ability) => $user->hasRole('super-admin') ? true : null);
+        Gate::before(fn ($user, $ability) => $user->hasRole('super admin') ? true : null);
     }
 }

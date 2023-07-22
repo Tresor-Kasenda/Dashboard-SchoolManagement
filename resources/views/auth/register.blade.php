@@ -1,11 +1,13 @@
 <x-guest-layout>
+    <x-auth-session-status class="mb-4" :status="session('status')"/>
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <div>
             <x-input-label for="name" :value="__('Name')"/>
             <x-text-input
                 id="name"
-                class="block mt-1 w-full placeholder-gray-400 placeholder:text-sm text-gray-700 "
+                class="block mt-1 w-full placeholder-gray-400 placeholder:text-sm text-gray-700"
                 type="text" name="name"
                 :value="old('name')"
                 required

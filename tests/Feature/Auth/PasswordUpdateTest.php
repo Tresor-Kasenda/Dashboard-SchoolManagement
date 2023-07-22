@@ -39,3 +39,28 @@ it('correct password must be provided to update password', function (): void {
         ->assertSessionHasErrorsIn('updatePassword', 'current_password')
         ->assertRedirect('/profile');
 });
+
+
+it('new password must be confirmed', function (): void {
+    actingAs($this->user)
+        ->from('/profile')
+        ->put('/password', [
+            'current_password' => 'password',
+            'password' => 'new-password',
+            'password_confirmation' => 'wrong-password',
+        ])
+        ->assertSessionHasErrorsIn('updatePassword', 'password')
+        ->assertRedirect('/profile');
+});
+
+it('password must be at least 8 characters', function (): void {
+    actingAs($this->user)
+        ->from('/profile')
+        ->put('/password', [
+            'current_password' => 'password',
+            'password' => 'short',
+            'password_confirmation' => 'short',
+        ])
+        ->assertSessionHasErrorsIn('updatePassword', 'password')
+        ->assertRedirect('/profile');
+});
