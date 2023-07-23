@@ -14,31 +14,19 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans text-gray-900 antialiased">
-<nav class="shadow-2xl group">
+<body class="font-sans text-gray-900 antialiased dark:text-white">
+<nav class="shadow-sm group">
     <div class="py-5 px-4 flex relative max-w-6xl mx-auto items-center justify-between">
-        <h1 class="text-5xl font-bold text-gray-800 hover:text-teal-900 dark:text-white cursor-pointer">
-            <a href="{{ route('home') }}">
-                Vinco
-            </a>
-        </h1>
-        <ul class="space-x-4 items-center tracking-wide text-base lg:flex lg:text-sm sm:hidden md:block">
+        <a href="{{ route('home') }}"
+           class="text-5xl font-extrabold text-gray-700 font-sans cursor-pointer first-letter:text-indigo-600 hover:text-gray-500">
+            Vinco
+        </a>
+
+        <ul class="space-x-4 items-center lg:flex lg:text-sm sm:hidden md:block">
             <li>
                 <a href="#"
-                   class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
+                   class="text-gray-700 font-medium text-lg hover:text-indigo-600 transition duration-300 ease-out">
                     Home
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="text-base font-medium text-gray-700 hover:text-teal-400 hover:underline hover:underline-offset-3 hover:transition before:ease-in-out before:duration-200">
-                    About
-                </a>
-            </li>
-            <li>
-                <a href="#"
-                   class="text-base font-medium rounded-lg bg-teal-400/80 hover:bg-teal-600 transition duration-700 ease-in-out hover:right-2 text-white px-4 py-3">
-                    Contact
                 </a>
             </li>
         </ul>
@@ -48,16 +36,17 @@
 <section class="max-w-6xl mx-auto flex justify-between items-center relative py-16 px-4">
     <div
         class="flex-1 grid grid-cols-2 relative gap-4 max-sm:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 sm:mx-auto  lg:grid-cols-2 lg:gap-8">
-        <div class="text-left sm:text-center md:text-left space-y-8">
+        <div class="text-left max-w-xs:text-center sm:text-center md:text-left space-y-8">
             <h1 class="text-6xl font-bold font-sans text-gray-700">
-                Used the world's <span
+                Used the world's
+                <span
                     class="text-transparent bg-gradient-to-br  from-blue-800 to-indigo-400 bg-clip-text">innovative</span>
                 businesses
             </h1>
             <p class="font-sans text-gray-700 font-medium shrink leading-8 text-left text-2xl justify-around">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae deleniti expedita iste
-                nesciunt
-                non odio odit officiis soluta vel! Ab dolor eligendi ex expedita harum ipsum tempore ullam, voluptatum?
+                nesciunt non odio odit officiis soluta vel! Ab dolor eligendi ex expedita harum ipsum tempore ullam,
+                voluptatum?
             </p>
 
             <div class="flex justify-start items-center sm:justify-center md:justify-start md:gap-8">
@@ -77,7 +66,7 @@
             </div>
         </div>
         <img src="{{ asset('images/h.png') }}" alt=""
-             class="w-full object-cover h-2/3 inset-0 hover:shadow-sm">
+             class="w-full object-cover h-auto inset-0 hover:shadow-sm">
     </div>
 </section>
 

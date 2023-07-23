@@ -2,9 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Http\Controllers\Admins\Process\ProcessController;
 use App\Http\Controllers\Admins\Sessions\SessionController;
-use App\Http\Controllers\Admins\University\StoreUniversityController;
-use App\Http\Controllers\Admins\University\UniversityController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
@@ -29,8 +28,7 @@ Route::middleware(['auth', UserStatusMiddleware::class])->group(function (): voi
         ->name('profile.destroy')
         ->middleware(UniversityMiddleware::class);
 
-    Route::get('university', UniversityController::class)->name('university.index');
-    Route::post('university', StoreUniversityController::class)->name('university.store');
+    Route::get('process', ProcessController::class)->name('process.index');
 
     Route::get('sessions', SessionController::class)->name('sessions.index');
 });

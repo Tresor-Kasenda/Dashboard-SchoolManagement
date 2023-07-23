@@ -16,7 +16,7 @@ use Spatie\Permission\Models\Role;
 class StoreUserAction
 {
     /**
-     * @param  StoreUserRequest  $request
+     * @param StoreUserRequest $request
      * @return RedirectResponse
      */
     public function handle(StoreUserRequest $request): RedirectResponse
@@ -27,17 +27,17 @@ class StoreUserAction
             'password' => Hash::make($request->input('password')),
         ]);
 
-        $user->assignRole(
-            Role::where('name', '=', 'user')->first()
-        );
+        /**
+         * @var User $user
+         */
 
-        activity()->log("");
+        $user->assignRole(Role::where('name', '=', 'user')->first());
 
         activity()
             ->performedOn($user)
             ->causedBy(auth()->user())
             ->withProperties(['email' => $user->email])
-            ->log("User created {$user->name} with succesful");
+            ->log("User created {$user->name} with succesful with default role user");
 
         /** @var User $user */
         event(new Registered($user));

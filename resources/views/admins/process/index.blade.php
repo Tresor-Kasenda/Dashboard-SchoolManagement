@@ -1,4 +1,4 @@
-<x-app-layout>
+<x-app-layout title="Configuration">
     <div class="nk-split nk-split-page nk-split-lg">
         <div class="nk-split-content bg-dark is-dark p-5 d-flex justify-between flex-column text-center">
             <a href="{{ route('dashboard') }}" class="logo-link nk-sidebar-logo">
@@ -13,10 +13,10 @@
                     facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
                 <img class="nk-survey-gfx mt-5 w-60" src="{{ asset('images/gfx-a.png') }}" alt="">
             </div>
-            <p>&copy; {{ now()->format('Y') }} {{ config('app.name') }}. </p>
+            <p>&copy; {{ now()->format('Y') }} {{ config('app.name') }} Management systems. </p>
         </div>
         <div
-                class="nk-split-content nk-split-stretch bg-white p-5 d-flex justify-center align-center flex-column">
+            class="nk-split-content nk-split-stretch bg-white p-5 d-flex justify-center align-center flex-column">
             <div class="wide-xs-fix">
                 <form class="nk-stepper stepper-init is-alter" action="#" id="stepper-survey-v2">
                     <div class="nk-stepper-content">
@@ -29,47 +29,54 @@
                         <div class="nk-stepper-steps stepper-steps">
                             <div class="nk-stepper-step">
                                 <div class="nk-stepper-step-head mb-4">
-                                    <h5 class="title">What are you looking for ?</h5>
-                                    <p>Tation argumentum et usu, dicit viderer evertitur te has</p>
+                                    <h5 class="title">Quel est votre situation?</h5>
+                                    <p>Selectionner la situation qui vous convients</p>
                                 </div>
                                 <ul class="row g-3">
                                     <li class="col-6">
                                         <div
-                                                class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
-                                            <input type="radio" class="custom-control-input"
-                                                   name="sv2-preference" id="sv2-preference-fedev"
-                                                   value="sv2-preference-fedev" required>
+                                            class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
+                                            <input
+                                                type="radio"
+                                                class="custom-control-input"
+                                                name="sv2-preference"
+                                                id="sv2-preference-fedev"
+                                                value="sv2-preference-fedev"
+                                                required>
                                             <label class="custom-control-label" for="sv2-preference-fedev">
-                                                                <span
-                                                                        class="d-flex flex-column text-center py-1 py-sm-2">
-                                                                    <span class="icon-wrap xl">
-                                                                        <img class="img"
-                                                                             src="./images/icons/fornt-end-developer.svg"
-                                                                             alt="">
-                                                                    </span>
-                                                                    <span class="lead-text mb-1 mt-3">Etudiant</span>
-                                                                    <span class="sub-text">Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</span>
-                                                                </span>
+                                                <span
+                                                    class="d-flex flex-column text-center py-1 py-sm-2">
+                                                    <span class="icon-wrap xl">
+                                                        <img class="img" src="./images/icons/fornt-end-developer.svg"
+                                                             alt="">
+                                                    </span>
+                                                    <span class="lead-text mb-1 mt-3">Etudiant</span>
+                                                    <span class="sub-text">Postea democritum mnesarchum ne nam, ad vim aperiri tractatos.</span>
+                                                </span>
                                             </label>
                                         </div>
                                     </li>
                                     <li class="col-6">
                                         <div
-                                                class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
-                                            <input type="radio" class="custom-control-input"
-                                                   name="sv2-preference" id="sv2-preference-uxdis"
-                                                   value="sv2-preference-uxdis" required>
+                                            class="custom-control custom-control-sm custom-radio pro-control custom-control-full">
+                                            <input
+                                                type="radio"
+                                                class="custom-control-input"
+                                                name="sv2-preference"
+                                                id="sv2-preference-uxdis"
+                                                value="sv2-preference-uxdis"
+                                                required>
                                             <label class="custom-control-label" for="sv2-preference-uxdis">
-                                                                <span
-                                                                        class="d-flex flex-column text-center py-1 py-sm-2">
-                                                                    <span class="icon-wrap xl">
-                                                                        <img class="img"
-                                                                             src="./images/icons/ux-designer.svg"
-                                                                             alt="">
-                                                                    </span>
-                                                                    <span class="lead-text mb-1 mt-3">Prorietaire d'une ecole</span>
-                                                                    <span class="sub-text">Prioritize and solve your tasks in short time cycles.</span>
-                                                                </span>
+                                                <span
+                                                    class="d-flex flex-column text-center py-1 py-sm-2">
+                                                    <span class="icon-wrap xl">
+                                                        <img class="img"
+                                                             src="./images/icons/ux-designer.svg"
+                                                             alt="">
+                                                    </span>
+                                                    <span class="lead-text mb-1 mt-3">Prorietaire d'une ecole</span>
+                                                    <span class="sub-text">Prioritize and solve your tasks in short time cycles.</span>
+                                                </span>
                                             </label>
                                         </div>
                                     </li>

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Models;
 
+use App\Events\UniversityEvent;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -21,6 +22,10 @@ class University extends Model
         'email',
         'phone',
         'code',
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => UniversityEvent::class
     ];
 
     public function user(): HasOne

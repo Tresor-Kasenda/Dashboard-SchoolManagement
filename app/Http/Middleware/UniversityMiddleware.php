@@ -23,7 +23,7 @@ class UniversityMiddleware
          * @var User $user
          */
         if (null === Auth::user()->university_id) {
-            return to_route('university.index');
+            return to_route('process.index');
         }
 
         return $next($request);

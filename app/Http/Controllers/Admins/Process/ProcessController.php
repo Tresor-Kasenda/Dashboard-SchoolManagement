@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace App\Http\Controllers\Admins\University;
+namespace App\Http\Controllers\Admins\Process;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class UniversityController extends Controller
+class ProcessController extends Controller
 {
     /**
-     * @param  Request  $request
+     * @param Request $request
      * @return View
      */
     public function __invoke(Request $request): View
     {
-        return view('admins.university.index');
+        return view('admins.process.index');
     }
 }
