@@ -13,9 +13,10 @@
 </head>
 <body class="font-sans text-gray-900 antialiased">
 <div
-    class="min-h-screen grid grid-cols-2 max-sm:grid-cols-1 sm:grid-col-1 md:grid-cols-2 md:gap-4 lg:grid-cols-2 gap-4">
+    class="container min-h-screen grid grid-cols-2 max-sm:grid-cols-1 sm:grid-col-1 md:grid-cols-2 md:gap-4 lg:grid-cols-2 gap-4">
     <div class="relative bg-red-500 bg-opacity-40 max-sm:hidden sm:hidden md:block">
-        <img src="{{ asset('images/profile.jpg') }}" class="absolute inset-0 object-cover overflow-hidden w-full h-full"
+        <img src="{{ asset('images/profile.jpg') }}"
+             class="absolute aspect-square inset-0 object-cover overflow-hidden w-full h-full"
              alt="">
         <div class="absolute bg-indigo-900/60 inset-0"></div>
         <div class="relative max-w-7xl mx-auto py-10 px-16 flex flex-col space-y-64">

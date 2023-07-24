@@ -2,7 +2,6 @@
 
 namespace App\Notifications;
 
-use App\Models\University;
 use Illuminate\Bus\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
@@ -14,7 +13,7 @@ class UniversityNotification extends Notification
     /**
      * Create a new notification instance.
      */
-    public function __construct(public University $university)
+    public function __construct()
     {
         //
     }

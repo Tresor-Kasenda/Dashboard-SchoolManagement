@@ -15,7 +15,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans antialiased dark:text-white bg-slate-50">
-<nav class="shadow-sm group">
+
+<nav class="shadow-sm group bg-white">
     <div class="py-5 px-4 flex relative max-w-6xl mx-auto items-center justify-between">
         <a href="{{ route('home') }}"
            class="text-5xl sm:text-4xl max-sm:text-3xl font-extrabold text-gray-700 font-sans cursor-pointer first-letter:text-indigo-600 hover:text-gray-500">
@@ -37,7 +38,7 @@
             </li>
             <li>
                 <a href="#"
-                   class="px-4 py-3 bg-indigo-600 hover:bg-indigo-700 font-[400px] text-lg font-sans rounded-full text-white">
+                   class="px-4 py-3 focus:outline-none focus-visible:ring bg-indigo-600 hover:bg-indigo-700 font-[400px] text-lg font-sans rounded-full text-white">
                     Try it now
                 </a>
             </li>
@@ -45,9 +46,9 @@
     </div>
 </nav>
 
-<section class="relative max-w-6xl mx-auto flex justify-between items-center px-4 py-24 max-sm:py-14 max-sm:leading-10">
+<section class="relative max-w-6xl mx-auto flex justify-between items-center px-4 py-10 max-sm:py-14 max-sm:leading-10">
     <div
-        class="max-w-4xl mx-auto text-center max-w-xs:text-center sm:text-center md:text-center space-y-8 max-sm:space-y-5">
+        class="max-w-4xl mx-auto text-center max-w-xs:text-center sm:text-center md:text-center space-y-10 max-sm:space-y-5">
         <h1 class="text-7xl max-sm:text-4xl  font-bold font-sans text-gray-700 leading-tight">
             Used the world's
             <span
@@ -56,7 +57,7 @@
                 </span>
             businesses
         </h1>
-        <p class="font-sans text-slate-500 max-sm:text-lg sm:text-xl md:text-lg lg:text-lg font-medium leading-8 text-center text-xl justify-around">
+        <p class="font-sans text-slate-500 max-sm:text-lg sm:text-xl md:text-lg lg:text-2xl font-medium leading-8 text-center justify-around">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae deleniti expedita iste
             nesciunt
         </p>
@@ -70,11 +71,31 @@
     </div>
 </section>
 
+<section class="py-10">
+    <ul class="max-w-6xl mx-auto flex items-center justify-center space-x-10">
+        <li>
+            <img src="{{ asset('images/brand-b.png') }}" alt="">
+        </li>
+        <li>
+            <img src="{{ asset('images/brand-a.png') }}" alt="">
+        </li>
+        <li>
+            <img src="{{ asset('images/brand-f.png') }}" alt="">
+        </li>
+        <li>
+            <img src="{{ asset('images/brand-a.png') }}" alt="">
+        </li>
+        <li>
+            <img src="{{ asset('images/brand-b.png') }}" alt="">
+        </li>
+    </ul>
+</section>
+
 <section class="p-6 space-y-5 max-sm:space-y-3 max-sm:p-3 max-sm:py-3">
     <div class="max-w-3xl mx-auto">
         <h2 class="text-gray-700 text-center text-4xl max-sm:text-3xl sm:text-6xl md:text-5xl lg:text-7xl">Choose Your
             Plan</h2>
-        <p class="text-center max-sm:text-[16px] sm:text-[16px] text-lg py-5 max-sm:py-3 text-slate-500">
+        <p class="text-center max-sm:text-[16px] sm:text-[16px] text-2xl py-5 max-sm:py-3 text-slate-500">
             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and
             I will give you a complete account of the system, the master-builder of human happiness.
         </p>
@@ -90,7 +111,7 @@
                 <span class="text-gray-500">/mo</span>
             </div>
             <div class="py-7 max-sm:py-4">
-                <ul class="list-inside space-y-2 text-black">
+                <ul class="marker:text-sky-400 list-disc pl-4 space-y-2 text-black">
                     <li class="font-gray-600 text-sm font-medium">LMS access</li>
                     <li class="font-gray-600 text-sm font-medium">Maintenance</li>
                     <li class="font-gray-600 text-sm font-medium">10 GB Bandwidth</li>

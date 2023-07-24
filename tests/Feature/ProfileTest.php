@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use App\Enums\StatusEnum;
 use App\Models\User;
-
 use function Pest\Laravel\actingAs;
 
 beforeEach(function (): void {
@@ -33,6 +32,10 @@ it('profile information can be updated', function (): void {
     $this->assertSame('Test User', $this->user->name);
     $this->assertSame('test@example.com', $this->user->email);
     $this->assertNull($this->user->email_verified_at);
+
+    expect($this->user->email)
+        ->toContain('test@example.com')
+        ->toHaveCount(1);
 });
 
 it('email verification status is unchanged when the email address is unchanged', function (): void {
@@ -90,4 +93,7 @@ it('user can not activate their account', function (): void {
         ->assertRedirect('/profile');
 
     $this->assertNotNull($this->user->refresh()->status);
+
+    expect($this->user->status)
+        ->toBe(StatusEnum::ACTIVE);
 });
