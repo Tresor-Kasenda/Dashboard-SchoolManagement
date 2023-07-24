@@ -3,18 +3,17 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Admins\Process\ProcessController;
-use App\Http\Controllers\Admins\Sessions\SessionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn() => view('welcome'))->name('home');
+Route::get('/', fn () => view('welcome'))->name('home');
 
 Route::middleware(['auth', 'verified', UserStatusMiddleware::class])->group(function (): void {
     // verification if user has university
     Route::middleware(UniversityMiddleware::class)->group(function (): void {
-        Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+        Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
         Route::get('/profile', [ProfileController::class, 'edit'])
             ->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])
@@ -25,9 +24,7 @@ Route::middleware(['auth', 'verified', UserStatusMiddleware::class])->group(func
 
 
     Route::get('process', ProcessController::class)->name('process.index');
-
-    Route::get('sessions', SessionController::class)->name('sessions.index');
 });
 
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

@@ -50,7 +50,6 @@ class CreateUserCommand extends Command
             $user->assignRole($role);
         });
 
-
         $this->info('User'.$user['email'].'create successfully');
     }
 }

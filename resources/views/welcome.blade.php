@@ -18,11 +18,11 @@
 <nav class="shadow-sm group">
     <div class="py-5 px-4 flex relative max-w-6xl mx-auto items-center justify-between">
         <a href="{{ route('home') }}"
-           class="text-5xl font-extrabold text-gray-700 font-sans cursor-pointer first-letter:text-indigo-600 hover:text-gray-500">
+           class="text-5xl sm:text-4xl max-sm:text-3xl font-extrabold text-gray-700 font-sans cursor-pointer first-letter:text-indigo-600 hover:text-gray-500">
             Vinco
         </a>
 
-        <ul class="space-x-4 items-center lg:flex lg:text-sm sm:hidden md:block">
+        <ul class="space-x-4 items-center lg:flex text-sm max-sm:hidden sm:hidden md:block">
             <li>
                 <a href="#"
                    class="text-gray-700 font-medium text-lg hover:text-indigo-600 transition duration-300 ease-out">
@@ -45,9 +45,10 @@
     </div>
 </nav>
 
-<section class="relative max-w-6xl mx-auto flex justify-between items-center px-4 py-24">
-    <div class="max-w-4xl mx-auto text-center max-w-xs:text-center sm:text-center md:text-center space-y-8">
-        <h1 class="text-7xl font-bold font-sans text-gray-700 leading-tight">
+<section class="relative max-w-6xl mx-auto flex justify-between items-center px-4 py-24 max-sm:py-14 max-sm:leading-10">
+    <div
+        class="max-w-4xl mx-auto text-center max-w-xs:text-center sm:text-center md:text-center space-y-8 max-sm:space-y-5">
+        <h1 class="text-7xl max-sm:text-4xl  font-bold font-sans text-gray-700 leading-tight">
             Used the world's
             <span
                 class="before:block before:absolute before:-inset-1 before:-skew-x-3 before:bg-pink-500 relative inline-block">
@@ -55,40 +56,41 @@
                 </span>
             businesses
         </h1>
-        <p class="font-sans text-slate-500 font-medium leading-8 text-center text-xl justify-around">
+        <p class="font-sans text-slate-500 max-sm:text-lg sm:text-xl md:text-lg lg:text-lg font-medium leading-8 text-center text-xl justify-around">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae deleniti expedita iste
             nesciunt
         </p>
 
         <div class="flex justify-center items-center sm:justify-center md:justify-center md:gap-8">
             <a href="{{ route('register') }}"
-               class="px-5 py-3 text-lg font-medium bg-pink-500 outline-offset-1 text-white rounded-full hover:bg-pink-600-700 before:bg-indigo-700 hover:text-white dark:hover:text-white transition ease-in duration-500 hover:right-2">
+               class="px-5 py-3 max-sm:px-4 max-sm:py-2 max-sm:text-[15px] text-lg font-medium bg-pink-500 outline-offset-1 text-white rounded-full hover:bg-pink-600-700 before:bg-indigo-700 hover:text-white dark:hover:text-white transition ease-in duration-500 hover:right-2">
                 Try it now
             </a>
         </div>
     </div>
 </section>
 
-<section class="p-6 space-y-5">
+<section class="p-6 space-y-5 max-sm:space-y-3 max-sm:p-3 max-sm:py-3">
     <div class="max-w-3xl mx-auto">
-        <h2 class="text-gray-700 text-center text-4xl sm:text-6xl md:text-5xl lg:text-7xl">Choose Your Plan</h2>
-        <p class="text-center text-lg py-5 text-slate-500">
+        <h2 class="text-gray-700 text-center text-4xl max-sm:text-3xl sm:text-6xl md:text-5xl lg:text-7xl">Choose Your
+            Plan</h2>
+        <p class="text-center max-sm:text-[16px] sm:text-[16px] text-lg py-5 max-sm:py-3 text-slate-500">
             But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and
             I will give you a complete account of the system, the master-builder of human happiness.
         </p>
     </div>
     <div
-        class="max-w-5xl mx-auto p-6 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-6">
+        class="max-w-5xl mx-auto p-6 grid grid-cols-1 max-sm:grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2 md:gap-6 lg:grid-cols-3 lg:gap-6">
         <div
-            class="relative shadow bg-white px-10 border rounded-md text-left ring-1 hover:border-green-500">
-            <h2 class="text-3xl font-medium font-sans text-gray-700 pt-4">Basic</h2>
+            class="relative shadow bg-white max-sm:col-end-2 px-10 border rounded-md text-left ring-1 hover:border-green-500">
+            <h2 class="text-3xl max-sm:text-2xl font-medium font-sans text-gray-700 pt-4">Basic</h2>
             <div class="py-5">
-                <span class="text-4xl text-gray-600 font-bold">$</span>
-                <span class="text-4xl text-gray-600 font-bold">40</span>
+                <span class="text-4xl max-sm:text-2xl text-gray-600 font-bold">$</span>
+                <span class="text-4xl max-sm:text-2xl text-gray-600 font-bold">40</span>
                 <span class="text-gray-500">/mo</span>
             </div>
-            <div class="py-7">
-                <ul class="list-inside space-y-2">
+            <div class="py-7 max-sm:py-4">
+                <ul class="list-inside space-y-2 text-black">
                     <li class="font-gray-600 text-sm font-medium">LMS access</li>
                     <li class="font-gray-600 text-sm font-medium">Maintenance</li>
                     <li class="font-gray-600 text-sm font-medium">10 GB Bandwidth</li>
@@ -101,7 +103,7 @@
                 </button>
             </div>
         </div>
-        
+
     </div>
 </section>
 

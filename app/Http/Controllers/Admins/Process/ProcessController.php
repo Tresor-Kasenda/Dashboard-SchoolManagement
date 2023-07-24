@@ -16,6 +16,6 @@ class ProcessController extends Controller
      */
     public function __invoke(Request $request): View
     {
-        return view('admins.process.index');
+        return view('admins.process.process');
     }
 }

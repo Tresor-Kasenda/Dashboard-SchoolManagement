@@ -8,6 +8,7 @@ namespace App\Models;
 use App\Enums\StatusEnum;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -15,6 +16,9 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * @template T
+ */
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -40,6 +44,9 @@ class User extends Authenticatable
         'university_id'
     ];
 
+    /**
+     * @var string[]|array<string, string>
+     */
     protected $dispatchesEvents = [
         'created' => Registered::class
     ];
@@ -65,6 +72,10 @@ class User extends Authenticatable
         'status' => StatusEnum::class,
     ];
 
+    /**
+     * university belong to user
+     * @return BelongsTo<Model>
+     */
     public function university(): BelongsTo
     {
         return $this->belongsTo(University::class);
