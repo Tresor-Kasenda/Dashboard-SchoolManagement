@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+@props(['title'])
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name') }} | {{ $title }}</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="font-sans text-gray-900 antialiased">
@@ -16,13 +17,13 @@
     <div class="relative bg-red-500 bg-opacity-40 max-sm:hidden sm:hidden md:block">
         <img src="{{ asset('images/profile.jpg') }}" class="absolute inset-0 object-cover overflow-hidden w-full h-full"
              alt="">
-        <div class="absolute bg-indigo-900 inset-0 bg-opacity-20"></div>
-        <div class="relative max-w-7xl mx-auto p-24 flex flex-col space-y-64">
-            <h1 class="text-6xl text-white tracking-widest font-bold font-sans">
+        <div class="absolute bg-indigo-900/60 inset-0"></div>
+        <div class="relative max-w-7xl mx-auto py-10 px-16 flex flex-col space-y-64">
+            <h1 class="text-6xl text-white tracking-widest font-bold">
                 <a href="{{ route('home') }}">Vinco</a>
             </h1>
 
-            <p class="text-white text-xl font-medium leading-9">
+            <p class="text-white text-xl font-medium leading-9 bottom-0">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim itaque magnam mollitia nisi voluptate
             </p>
         </div>
@@ -36,7 +37,7 @@
         </div>
 
         <button
-            class="w-full flex items-center justify-center shadow-md border border-blue-500 transition ease-in-out duration-500 focus:ring-1 focus:ring-indigo-500 focus:ring-offset-2 hover:text-white hover:bg-indigo-400 hover:ring-indigo-300 border-1 rounded-md py-2">
+            class="w-full flex items-center justify-center shadow-md border border-blue-500 transition ease-in-out duration-500 focus:ring-1 focus:ring-indigo-500 focus:ring-offset-2 before:outline-offset-1 bg-indigo-700 text-white hover:bg-indigo-400 hover:ring-indigo-300 border-1 rounded-md py-2">
 
                 <span class="text-[16px] font-medium font-sans dark:text-white">
                     Sign up with google

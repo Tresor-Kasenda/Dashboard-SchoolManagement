@@ -18,8 +18,8 @@ Vinco est une solution adapter aux ecoles et aux universites parce qu'elle perme
 
 ## **Fonctionnalite**
 
-- [ ]  Page de presentation de la plateforme
-- [ ]  Inscription de l'utilisaeur
+- [x]  Page de presentation de la plateforme
+- [x]  Inscription de l'utilisaeur
 - [ ]  creation de l'institution
 - [ ]  Definir l'annee academique (scolaire)
 - [ ]  Acceder au dashboard

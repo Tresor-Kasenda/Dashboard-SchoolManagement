@@ -9,8 +9,10 @@
             </a>
             <div class="text-block wide-xs mx-auto">
                 <h3 class="text-white">Procedure de configuration</h3>
-                <p>Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu,
-                    facete detracto patrioque an per, lucilius pertinacia eu vel.</p>
+                <p>
+                    Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu,
+                    facete detracto patrioque an per, lucilius pertinacia eu vel.
+                </p>
                 <img class="nk-survey-gfx mt-5 w-60" src="{{ asset('images/gfx-a.png') }}" alt="">
             </div>
             <p>&copy; {{ now()->format('Y') }} {{ config('app.name') }} Management systems. </p>
@@ -47,7 +49,7 @@
                                                 <span
                                                     class="d-flex flex-column text-center py-1 py-sm-2">
                                                     <span class="icon-wrap xl">
-                                                        <img class="img" src="./images/icons/fornt-end-developer.svg"
+                                                        <img class="img" src=""
                                                              alt="">
                                                     </span>
                                                     <span class="lead-text mb-1 mt-3">Etudiant</span>
@@ -71,7 +73,7 @@
                                                     class="d-flex flex-column text-center py-1 py-sm-2">
                                                     <span class="icon-wrap xl">
                                                         <img class="img"
-                                                             src="./images/icons/ux-designer.svg"
+                                                             src=""
                                                              alt="">
                                                     </span>
                                                     <span class="lead-text mb-1 mt-3">Prorietaire d'une ecole</span>

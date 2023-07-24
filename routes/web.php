@@ -9,24 +9,20 @@ use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => view('welcome'))->name('home');
+Route::get('/', fn() => view('welcome'))->name('home');
 
-Route::get('/dashboard', fn () => view('dashboard'))->middleware([
-    'auth', 'verified',
-    UserStatusMiddleware::class,
-    UniversityMiddleware::class,
-])->name('dashboard');
+Route::middleware(['auth', 'verified', UserStatusMiddleware::class])->group(function (): void {
+    // verification if user has university
+    Route::middleware(UniversityMiddleware::class)->group(function (): void {
+        Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
+        Route::get('/profile', [ProfileController::class, 'edit'])
+            ->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])
+            ->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])
+            ->name('profile.destroy');
+    });
 
-Route::middleware(['auth', UserStatusMiddleware::class])->group(function (): void {
-    Route::get('/profile', [ProfileController::class, 'edit'])
-        ->name('profile.edit')
-        ->middleware(UniversityMiddleware::class);
-    Route::patch('/profile', [ProfileController::class, 'update'])
-        ->name('profile.update')
-        ->middleware(UniversityMiddleware::class);
-    Route::delete('/profile', [ProfileController::class, 'destroy'])
-        ->name('profile.destroy')
-        ->middleware(UniversityMiddleware::class);
 
     Route::get('process', ProcessController::class)->name('process.index');
 
@@ -34,4 +30,4 @@ Route::middleware(['auth', UserStatusMiddleware::class])->group(function (): voi
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
