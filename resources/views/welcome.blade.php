@@ -2,7 +2,7 @@
     'title' => ''
 ])
     <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="dark scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,31 +14,31 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="font-sans antialiased dark:text-white bg-slate-50">
+<body class="font-sans antialiased overflow-x-hidden dark:text-white bg-slate-50">
 
 <nav class="shadow-sm group bg-white">
     <div class="py-5 px-4 flex relative max-w-6xl mx-auto items-center justify-between">
         <a href="{{ route('home') }}"
-           class="text-5xl sm:text-4xl max-sm:text-3xl font-extrabold text-gray-700 font-sans cursor-pointer first-letter:text-indigo-600 hover:text-gray-500">
-            Vinco
+           class="text-3xl sm:text-4xl max-sm:text-3xl font-bold text-gray-700 font-sans cursor-pointer first-letter:text-indigo-600 hover:text-gray-500">
+            vinco
         </a>
 
         <ul class="space-x-4 items-center lg:flex text-sm max-sm:hidden sm:hidden md:block">
             <li>
                 <a href="#"
-                   class="text-gray-700 font-medium text-lg hover:text-indigo-600 transition duration-300 ease-out">
+                   class="text-gray-700 font-medium text-base hover:text-indigo-600 transition duration-300 ease-out">
                     Home
                 </a>
             </li>
             <li>
                 <a href="#"
-                   class="text-gray-700 font-medium text-lg hover:text-indigo-600 transition duration-300 ease-out">
+                   class="text-gray-700 font-medium text-base hover:text-indigo-600 transition duration-300 ease-out">
                     About
                 </a>
             </li>
             <li>
                 <a href="#"
-                   class="px-4 py-3 focus:outline-none focus-visible:ring bg-indigo-600 hover:bg-indigo-700 font-[400px] text-lg font-sans rounded-full text-white">
+                   class="px-4 py-3 focus:outline-none focus-visible:ring bg-indigo-600 hover:bg-indigo-700 font-[400px] text-base font-sans rounded-full text-white">
                     Try it now
                 </a>
             </li>
@@ -49,30 +49,40 @@
 <section class="relative max-w-6xl mx-auto flex justify-between items-center px-4 py-10 max-sm:py-14 max-sm:leading-10">
     <div
         class="max-w-4xl mx-auto text-center max-w-xs:text-center sm:text-center md:text-center space-y-10 max-sm:space-y-5">
-        <h1 class="text-7xl max-sm:text-4xl  font-bold font-sans text-gray-700 leading-tight">
-            Used the world's
+        <h1 class="text-5xl max-sm:text-4xl  font-bold font-sans text-gray-700 leading-tight">
+            Used the world's <br class="hidden sm:inline-block">
             <span
                 class="before:block before:absolute before:-inset-1 before:-skew-x-3 before:bg-pink-500 relative inline-block">
                 <span class="relative text-white">innovative</span>
                 </span>
             businesses
         </h1>
-        <p class="font-sans text-slate-500 max-sm:text-lg sm:text-xl md:text-lg lg:text-2xl font-medium leading-8 text-center justify-around">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda beatae deleniti expedita iste
+        <p class="font-sans text-slate-500 text-base font-medium leading-8 text-center justify-around">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             nesciunt
         </p>
 
-        <div class="flex justify-center items-center sm:justify-center md:justify-center md:gap-8">
+        <div class="flex items-center justify-center gap-6">
             <a href="{{ route('register') }}"
-               class="px-5 py-3 max-sm:px-4 max-sm:py-2 max-sm:text-[15px] text-lg font-medium bg-pink-500 outline-offset-1 text-white rounded-full hover:bg-pink-600-700 before:bg-indigo-700 hover:text-white dark:hover:text-white transition ease-in duration-500 hover:right-2">
-                Try it now
+               class="relative flex bg-pink-500 rounded-full h-9 items-center justify-center px-4 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+                <span class="leading-none relative text-base tracking-wider text-white"> Try it now</span>
+            </a>
+            <a href="#" class="group flex items-center gap-1 tracking-wide text-pink-500">
+                <span
+                    class="relative text-base tracking-wider font-medium duration-300 group-hover:tracking-wider">Learn more</span>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor"
+                     class="w-6 h-6 translate-y-px duration-300 group-hover:translate-x-1">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"/>
+                </svg>
+
             </a>
         </div>
     </div>
 </section>
 
 <section class="py-10">
-    <ul class="max-w-6xl mx-auto flex items-center justify-center space-x-10">
+    <ul class="max-w-6xl mx-auto sm:overflow-x-auto flex items-center justify-center space-x-10">
         <li>
             <img src="{{ asset('images/brand-b.png') }}" alt="">
         </li>
