@@ -9,7 +9,7 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Spatie\Permission\Models\Role;
 
-class CreateUserCommand extends Command
+final class CreateUserCommand extends Command
 {
     /**
      * @var string

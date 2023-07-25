@@ -8,7 +8,7 @@ use App\Models\Media;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class MediaPolicy
+final class MediaPolicy
 {
     use HandlesAuthorization;
 

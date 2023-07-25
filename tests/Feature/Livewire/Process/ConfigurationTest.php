@@ -8,7 +8,7 @@ use App\Livewire\Process\Configuration;
 use Livewire\Livewire;
 use Tests\TestCase;
 
-class ConfigurationTest extends TestCase
+final class ConfigurationTest extends TestCase
 {
     /** @test */
     public function renders_successfully(): void

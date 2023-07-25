@@ -6,15 +6,21 @@ namespace App\Actions\Users;
 
 use App\Http\Requests\StoreUserRequest;
 use App\Models\User;
-use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
+use App\Pipeline\Users\AssignRoleToUser;
+use App\Pipeline\Users\RedirectAfterLogin;
+use App\Pipeline\Users\UserLogger;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\Pipeline;
 
-class StoreUserAction
+final class StoreUserAction
 {
+    protected array $pipeline = [
+        AssignRoleToUser::class,
+        UserLogger::class,
+        RedirectAfterLogin::class
+    ];
+
     /**
      * @param StoreUserRequest $request
      * @return RedirectResponse
@@ -27,23 +33,8 @@ class StoreUserAction
             'password' => Hash::make($request->input('password')),
         ]);
 
-        /**
-         * @var User $user
-         */
-
-        $user->assignRole(Role::where('name', '=', 'user')->first());
-
-        activity()
-            ->performedOn($user)
-            ->causedBy(auth()->user())
-            ->withProperties(['email' => $user->email])
-            ->log("User created {$user->name} with succesful with default role user");
-
-        /** @var User $user */
-        event(new Registered($user));
-
-        Auth::login($user);
-
-        return redirect(RouteServiceProvider::HOME);
+        return Pipeline::send($user)
+            ->through($this->pipeline)
+            ->thenReturn();
     }
 }

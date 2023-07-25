@@ -11,7 +11,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rules\Exists;
 use Illuminate\Validation\Rules\Password;
 
-class StoreUserRequest extends FormRequest
+final class StoreUserRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,8 +30,8 @@ class StoreUserRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:'.User::class],
-            'password' => ['required', Password::defaults()->mixedCase()],
+            'email' => ['required', 'email', 'max:255', 'unique:' . User::class],
+            'password' => ['required', Password::defaults()->mixedCase(), 'confirmed'],
             'university' => ['nullable', 'integer', new Exists(University::class, 'id')],
         ];
     }

@@ -15,7 +15,7 @@
 <div
     class="container min-h-screen grid grid-cols-2 max-sm:grid-cols-1 sm:grid-col-1 md:grid-cols-2 md:gap-4 lg:grid-cols-2 gap-4">
     <div class="relative bg-red-500 bg-opacity-40 max-sm:hidden sm:hidden md:block">
-        <img src="{{ asset('images/profile.jpg') }}"
+        <img src="{{ asset('images/call.jpg') }}"
              class="absolute aspect-square inset-0 object-cover overflow-hidden w-full h-full"
              alt="">
         <div class="absolute bg-indigo-900/60 inset-0"></div>
@@ -28,15 +28,8 @@
             </p>
         </div>
     </div>
-    <div
-        class="px-32 py-20 max-sm:px-8 max-sm:py-14 space-y-6 sm:px-10 sm:py-10 sm:col-span-2 md:col-span-1 lg:col-span-1 md:px-32 md:py-20 lg:px-32 lg:py-16">
-        <h1 class="text-4xl font-medium text-gray-900 dark:text-white">
-            Welcome to Vinco
-        </h1>
-
-        <div>
-            {{ $slot }}
-        </div>
+    <div>
+        {{ $slot }}
     </div>
 </div>
 </body>

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
-class BladeComponentServiceProvider extends ServiceProvider
+final class BladeComponentServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.

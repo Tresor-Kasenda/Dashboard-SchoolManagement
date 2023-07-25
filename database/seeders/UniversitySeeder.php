@@ -8,7 +8,7 @@ use App\Models\University;
 use Exception;
 use Illuminate\Database\Seeder;
 
-class UniversitySeeder extends Seeder
+final class UniversitySeeder extends Seeder
 {
     /**
      * Run the database seeds.

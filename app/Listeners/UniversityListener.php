@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Listeners;
 
-class UniversityListener
+final class UniversityListener
 {
     /**
      * Create the event listener.

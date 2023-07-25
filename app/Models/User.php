@@ -19,7 +19,7 @@ use Spatie\Permission\Traits\HasRoles;
 /**
  * @template T
  */
-class User extends Authenticatable
+final class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;

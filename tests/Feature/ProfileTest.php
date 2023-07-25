@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Enums\StatusEnum;
 use App\Models\User;
+
 use function Pest\Laravel\actingAs;
 
 beforeEach(function (): void {
@@ -34,8 +35,7 @@ it('profile information can be updated', function (): void {
     $this->assertNull($this->user->email_verified_at);
 
     expect($this->user->email)
-        ->toContain('test@example.com')
-        ->toHaveCount(1);
+        ->toContain('test@example.com');
 });
 
 it('email verification status is unchanged when the email address is unchanged', function (): void {

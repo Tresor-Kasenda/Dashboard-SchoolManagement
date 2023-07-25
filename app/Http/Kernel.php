@@ -8,7 +8,7 @@ use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
-class Kernel extends HttpKernel
+final class Kernel extends HttpKernel
 {
     /**
      * The application's global HTTP middleware stack.

@@ -9,7 +9,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
-class EmailVerificationNotificationController extends Controller
+final class EmailVerificationNotificationController extends Controller
 {
     /**
      * Send a new email verification notification.

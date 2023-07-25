@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class ProcessController extends Controller
+final class ProcessController extends Controller
 {
     /**
      * @param Request $request

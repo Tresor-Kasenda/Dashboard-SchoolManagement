@@ -11,7 +11,7 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class UniversityEvent
+final class UniversityEvent
 {
     use Dispatchable;
     use InteractsWithSockets;

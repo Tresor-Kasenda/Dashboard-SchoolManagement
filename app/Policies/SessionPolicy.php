@@ -8,7 +8,7 @@ use App\Models\Session;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class SessionPolicy
+final class SessionPolicy
 {
     use HandlesAuthorization;
 

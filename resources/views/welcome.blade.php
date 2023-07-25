@@ -37,7 +37,7 @@
                 </a>
             </li>
             <li>
-                <a href="#"
+                <a href="{{ route('login') }}"
                    class="px-4 py-3 focus:outline-none focus-visible:ring bg-indigo-600 hover:bg-indigo-700 font-[400px] text-base font-sans rounded-full text-white">
                     Try it now
                 </a>
