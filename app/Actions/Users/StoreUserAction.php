@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Pipeline;
 
 final class StoreUserAction
 {
-    protected array $pipeline = [
+    private array $pipeline = [
         AssignRoleToUser::class,
         UserLogger::class,
         RedirectAfterLogin::class

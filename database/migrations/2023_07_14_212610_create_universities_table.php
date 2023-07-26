@@ -19,7 +19,7 @@ return new class () extends Migration {
             $table->string('address')->nullable();
             $table->string('email')->nullable()->unique();
             $table->string('phone')->nullable()->unique();
-            $table->string('code');
+            $table->string('code')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

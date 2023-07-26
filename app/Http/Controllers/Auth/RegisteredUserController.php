@@ -14,8 +14,7 @@ final class RegisteredUserController extends Controller
 {
     public function __construct(
         protected readonly StoreUserAction $action
-    )
-    {
+    ) {
     }
 
     /**

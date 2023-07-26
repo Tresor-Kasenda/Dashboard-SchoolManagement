@@ -5,15 +5,17 @@ declare(strict_types=1);
 namespace Tests\Feature\Livewire\Process;
 
 use App\Livewire\Process\Configuration;
-use Livewire\Livewire;
-use Tests\TestCase;
+use App\Models\User;
 
-final class ConfigurationTest extends TestCase
-{
-    /** @test */
-    public function renders_successfully(): void
-    {
-        Livewire::test(Configuration::class)
-            ->assertStatus(200);
-    }
-}
+use function Pest\Laravel\actingAs;
+
+beforeEach(fn () => $this->user = User::factory()->create());
+
+describe('livewire first test', function (): void {
+
+    it('can render livewire component', function (): void {
+        actingAs($this->user)
+            ->get(route('process.index'))
+            ->assertSeeLivewire(Configuration::class);
+    });
+});

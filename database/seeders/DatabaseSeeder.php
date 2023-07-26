@@ -18,7 +18,8 @@ final class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             PermissionSeeder::class,
             UniversitySeeder::class,
-            UserSeeder::class
+            UserSeeder::class,
+            DomainSeeder::class
         ]);
     }
 }

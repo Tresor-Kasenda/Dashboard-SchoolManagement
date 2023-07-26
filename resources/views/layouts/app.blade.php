@@ -21,5 +21,6 @@
 </div>
 <script src="{{ asset('js/bundle.js') }}"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
+@yield('scripts')
 </body>
 </html>

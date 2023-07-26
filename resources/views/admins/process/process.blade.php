@@ -3,16 +3,17 @@
     <div class="nk-split nk-split-page nk-split-lg">
         <div class="nk-split-content bg-dark is-dark p-5 d-flex justify-between flex-column text-center">
             <a href="{{ route('dashboard') }}" class="logo-link nk-sidebar-logo">
-                <img class="logo-light logo-img" src="" srcset=" 2x"
+                <img class="logo-light logo-img" src="{{ asset('images/settings.svg') }}"
+                     srcset="{{ asset('images/settings.svg') }} 2x"
                      alt="logo">
-                <img class="logo-dark logo-img" src=""
-                     srcset=" 2x" alt="logo-dark">
+                <img class="logo-dark logo-img" src="{{ asset('images/settings.svg') }}"
+                     srcset="{{ asset('images/settings.svg') }} 2x" alt="logo-dark">
             </a>
             <div class="text-block wide-xs mx-auto">
                 <h3 class="text-white">Procedure de configuration</h3>
                 <p>
-                    Tation argumentum et usu, dicit viderer evertitur te has. Eu dictas concludaturque usu,
-                    facete detracto patrioque an per, lucilius pertinacia eu vel.
+                    Bienvenue chez vinco. <br>
+                    Apres avoir fini la configuration, vous pouvez commencer à utiliser le système de gestion.
                 </p>
                 <img class="nk-survey-gfx mt-5 w-60" src="{{ asset('images/gfx-a.png') }}" alt="">
             </div>
@@ -25,4 +26,5 @@
             </div>
         </div>
     </div>
+
 </x-app-layout>

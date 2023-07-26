@@ -30,7 +30,7 @@ final class StoreUserRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:' . User::class],
+            'email' => ['required', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', Password::defaults()->mixedCase(), 'confirmed'],
             'university' => ['nullable', 'integer', new Exists(University::class, 'id')],
         ];

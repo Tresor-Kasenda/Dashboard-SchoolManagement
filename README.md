@@ -1,5 +1,7 @@
 # VINCO ADMINISTRATTION
 
+![img.png](img.png)
+
 Vinco est une solution adapter aux ecoles et aux universites parce qu'elle permet:
 
 - Un bon deroulement des cours et la structuration des institutions d'enseignement
@@ -8,6 +10,10 @@ Vinco est une solution adapter aux ecoles et aux universites parce qu'elle perme
 - un moyen facile de consulter facilement l'horaire, note d'examen, depot de tp,
 - une communication entre ecole et les parents
 - un moyen de faire des etudes en lignes
+
+![img_1.png](img_1.png)
+![img_2.png](img_2.png)
+![img_3.png](img_3.png)
 
 ## Procesuss de deroulement du projet
 

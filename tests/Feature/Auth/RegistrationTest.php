@@ -57,6 +57,7 @@ it('new users can register', function (): void {
         'name' => 'Test User',
         'email' => 'test@example.com',
         'password' => 'password1T',
+        'password_confirmation' => 'password1T',
         'university' => University::factory()->create()->id,
     ])->assertRedirect(RouteServiceProvider::HOME);
 
