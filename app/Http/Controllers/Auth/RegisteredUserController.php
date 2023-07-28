@@ -6,15 +6,19 @@ namespace App\Http\Controllers\Auth;
 
 use App\Actions\Users\StoreUserAction;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\Admins\Users\StoreUserRequest;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 
+/**
+ * @template T
+ */
 final class RegisteredUserController extends Controller
 {
     public function __construct(
         protected readonly StoreUserAction $action
-    ) {
+    )
+    {
     }
 
     /**

@@ -23,7 +23,7 @@
             <h1 class="text-6xl text-white tracking-widest font-bold">
                 <a href="{{ route('home') }}">Vinco</a>
             </h1>
-            <p class="text-white text-xl font-medium leading-9 bottom-0">
+            <p class="text-white text-xl font-medium leading-9 bottom-0 items-end">
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim itaque magnam mollitia nisi voluptate
             </p>
         </div>

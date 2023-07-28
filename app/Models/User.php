@@ -6,6 +6,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Enums\StatusEnum;
+use App\Enums\UserTypeEnum;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -41,14 +42,16 @@ final class User extends Authenticatable
         'status',
         'feature_image_id',
         'password',
-        'university_id'
+        'university_id',
+        'user_type'
     ];
 
     /**
      * @var string[]|array<string, string>
      */
     protected $dispatchesEvents = [
-        'created' => Registered::class
+        'created' => Registered::class,
+        'user_type' => UserTypeEnum::class
     ];
 
     /**
@@ -79,5 +82,12 @@ final class User extends Authenticatable
     public function university(): BelongsTo
     {
         return $this->belongsTo(University::class);
+    }
+
+    // university hasConfiguredApplication
+
+    public function hasConfiguredApplication(): bool
+    {
+        return is_null($this->university_id);
     }
 }

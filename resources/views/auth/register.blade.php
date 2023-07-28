@@ -1,19 +1,34 @@
+@php use App\Enums\UserTypeEnum; @endphp
 <x-guest-layout title="Registration">
     <x-auth-session-status class="mb-4" :status="session('status')"/>
 
-    <div
-        class="px-24 py-20 items-center justify-center">
-        <h1 class="text-4xl font-medium text-gray-900 dark:text-white">
-            Welcome to Vinco
+    <div class="px-24 py-14 items-center justify-center space-y-1">
+        <h1 class="text-3xl font-medium text-gray-900 dark:text-white">
+            Create account
         </h1>
+        <p class="font-light text-light text-gray-500">
+            Get access to exclusive sass.
+        </p>
 
         <form method="POST" action="{{ route('register') }}" class="space-y-4">
             @csrf
             <div>
+                <x-input-label for="user_type" :value="__('Type user')"/>
+                <x-select
+                    id="user_type"
+                    class="block mt-1 w-full focus:outline-none text-sm placeholder-gray-400 placeholder:text-sm text-gray-700"
+                    name="user_type"
+                    :options="UserTypeEnum::cases()"
+                    :selected="old('user_type')"
+                    placeholder="Select your type user"
+                    required
+                    autocomplete="user_type"/>
+            </div>
+            <div>
                 <x-input-label for="name" :value="__('Name')"/>
                 <x-text-input
                     id="name"
-                    class="block mt-1 w-full placeholder-gray-400 placeholder:text-sm text-gray-700"
+                    class="block mt-1 w-full focus:outline-none placeholder-gray-400 placeholder:text-sm text-gray-700"
                     type="text" name="name"
                     :value="old('name')"
                     required
@@ -27,7 +42,7 @@
                 <x-input-label for="email" :value="__('Email')"/>
                 <x-text-input
                     id="email"
-                    class="block mt-1 w-full placeholder-gray-400 placeholder:text-sm text-gray-700"
+                    class="block mt-1 w-full focus:outline-none placeholder-gray-400 placeholder:text-sm text-gray-700"
                     type="email"
                     name="email"
                     placeholder="Enter your email address"
@@ -42,7 +57,7 @@
 
                 <x-text-input
                     id="password"
-                    class="block mt-1 w-full placeholder-gray-400 placeholder:text-sm text-gray-700"
+                    class="block mt-1 w-full focus:outline-none placeholder-gray-400 placeholder:text-sm text-gray-700"
                     type="password"
                     placeholder="Enter your password"
                     name="password"
@@ -53,16 +68,16 @@
             </div>
 
             <div>
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')"/>
+                <x-input-label for="password" :value="__('Password confirmation')"/>
 
                 <x-text-input
                     id="password_confirmation"
-                    class="block mt-1 w-full placeholder-gray-400 placeholder:text-sm text-gray-700"
+                    class="block mt-1 w-full focus:outline-none placeholder-gray-400 placeholder:text-sm text-gray-700"
                     type="password"
-                    placeholder="Confirm your password"
+                    placeholder="Enter your password confirmation"
                     name="password_confirmation"
                     required
-                    autocomplete="new-password"/>
+                    autocomplete="password_confirmation"/>
 
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2"/>
             </div>

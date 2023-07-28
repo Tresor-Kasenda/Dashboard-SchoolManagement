@@ -3,16 +3,18 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Admins\Process\ProcessController;
+use App\Http\Controllers\Admins\Process\StoreProcessController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
+use App\Http\Middleware\UserTypeMiddleware;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', fn () => view('welcome'))->name('home');
+Route::get('/', fn() => view('welcome'))->name('home');
 
 Route::middleware(['auth', 'verified', UserStatusMiddleware::class])->group(function (): void {
-    Route::middleware(UniversityMiddleware::class)->group(function (): void {
-        Route::get('/dashboard', fn () => view('dashboard'))->name('dashboard');
+
+    Route::middleware(UserTypeMiddleware::class)->group(function (): void {
+        Route::get('/dashboard', fn() => view('dashboard'))->name('dashboard');
         Route::get('/profile', [ProfileController::class, 'edit'])
             ->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])
@@ -23,7 +25,8 @@ Route::middleware(['auth', 'verified', UserStatusMiddleware::class])->group(func
 
 
     Route::get('process', ProcessController::class)->name('process.index');
+    Route::post('process', StoreProcessController::class)->name('store-process');
 });
 
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

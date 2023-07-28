@@ -15,7 +15,8 @@ final class BladeComponentServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Blade::component('layouts.backend', 'backend');
+        Blade::component('layouts.learning', 'learning');
+        Blade::component('layouts.base', 'app-base');
     }
 
     /**
@@ -24,16 +25,14 @@ final class BladeComponentServiceProvider extends ServiceProvider
     private function configureComponent(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (): void {
-            $this->registerComponent('');
+            $this->registerComponent();
         });
     }
 
     /**
-     * @param  string  $component
      * @return void
      */
-    private function registerComponent(string $component): void
+    private function registerComponent(): void
     {
-        Blade::component('admins.components'.$component, 'vex'.$component);
     }
 }
