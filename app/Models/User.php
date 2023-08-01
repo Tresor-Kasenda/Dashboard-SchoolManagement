@@ -84,8 +84,6 @@ final class User extends Authenticatable
         return $this->belongsTo(University::class);
     }
 
-    // university hasConfiguredApplication
-
     public function hasConfiguredApplication(): bool
     {
         return is_null($this->university_id);

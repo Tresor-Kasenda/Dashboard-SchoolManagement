@@ -30,7 +30,6 @@ final class UserSeeder extends Seeder
             ->where('name', 'super-admin')
             ->first();
 
-
         $admins->assignRole($superAdminRole);
         $admins->givePermissionTo(Permission::all());
     }

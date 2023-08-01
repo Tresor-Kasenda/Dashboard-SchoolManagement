@@ -21,8 +21,10 @@
                     :options="UserTypeEnum::cases()"
                     :selected="old('user_type')"
                     placeholder="Select your type user"
+                    :value="old('user_type')"
                     required
                     autocomplete="user_type"/>
+                <x-input-error :messages="$errors->get('user_type')" class="mt-2"/>
             </div>
             <div>
                 <x-input-label for="name" :value="__('Name')"/>

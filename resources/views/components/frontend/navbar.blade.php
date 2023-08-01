@@ -20,7 +20,7 @@
             </li>
             <li>
                 <a href="{{ route('login') }}"
-                   class="px-4 py-3 bg-pink-500 hover:bg-pink-600 rounded-full font-medium before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+                   class="px-4 py-3 bg-pink-500 text-white hover:bg-pink-600 rounded-full font-medium before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
                     Try it now
                 </a>
             </li>

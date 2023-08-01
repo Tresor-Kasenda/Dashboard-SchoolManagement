@@ -14,7 +14,7 @@
 <body class="font-sans text-gray-900 antialiased">
 <div
     class="container min-h-screen grid grid-cols-2 max-sm:grid-cols-1 sm:grid-col-1 md:grid-cols-2 md:gap-4 lg:grid-cols-2 gap-4">
-    <div class="relative bg-red-500 bg-opacity-40 max-sm:hidden sm:hidden md:block">
+    <div class="relative bg-red-500/40 max-sm:hidden sm:hidden md:block">
         <img src="{{ asset('images/call.jpg') }}"
              class="absolute aspect-square inset-0 object-cover overflow-hidden w-full h-full"
              alt="">
