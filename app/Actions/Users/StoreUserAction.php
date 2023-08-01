@@ -18,9 +18,9 @@ class StoreUserAction
 {
     private array $pipeline = [
         AssignRoleToUser::class,
+        StudentUniversity::class,
         UserLogger::class,
-        RedirectAfterLogin::class,
-        StudentUniversity::class
+        RedirectAfterLogin::class
     ];
 
     /**
