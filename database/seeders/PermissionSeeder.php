@@ -25,20 +25,24 @@ final class PermissionSeeder extends Seeder
             'profile',
             'header-administrate',
             'header-academics',
+            'manage users',
+            'manage roles',
+            'manage permissions',
+            'manage university',
+            'manage academics'
         ];
 
         collect($permissions)
-            ->each(fn ($permission) => Permission::create([
+            ->each(fn($permission) => Permission::create([
                 'name' => $permission,
                 'guard_name' => 'web',
             ]));
 
-        $admins = Role::query()
+        $superAdmin = Role::query()
             ->where('name', '=', 'super-admin')
             ->first();
 
-        $admins->givePermissionTo(Permission::all());
-
+        $superAdmin->givePermissionTo(Permission::all());
 
         $user = Role::query()
             ->where('name', '=', 'user')
@@ -49,6 +53,23 @@ final class PermissionSeeder extends Seeder
             'settings',
             'profile',
             'header-administrate',
+        ]);
+
+        $admin = Role::query()
+            ->where('name', '=', 'admin')
+            ->first();
+
+        $admin->givePermissionTo([
+            'view users',
+            'view roles',
+            'dashboard',
+            'settings',
+            'profile',
+            'header-administrate',
+            'header-academics',
+            'manage users',
+            'manage university',
+            'manage academics'
         ]);
     }
 }
