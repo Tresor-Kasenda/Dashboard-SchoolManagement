@@ -43,24 +43,16 @@
                                                     <x-backend.icon icons="ni-user-fill-c"/>
                                                     <span>Information de votre ecole</span>
                                                 </x-backend.settings.setting-link>
-                                                <li>
-                                                    <a href="html/user-profile-notification.html">
-                                                        <em class="icon ni ni-bell-fill"></em>
-                                                        <span>Notifications</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="html/user-profile-activity.html">
-                                                        <em class="icon ni ni-activity-round-fill"></em>
-                                                        <span>Account Activity</span>
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a href="html/user-profile-setting.html">
-                                                        <em class="icon ni ni-lock-alt-fill"></em>
-                                                        <span>Security Settings</span>
-                                                    </a>
-                                                </li>
+                                                <x-backend.settings.setting-link
+                                                    route="{{ route('setting.notification') }}">
+                                                    <x-backend.icon icons="ni-bell-fill"/>
+                                                    <span>Notifications</span>
+                                                </x-backend.settings.setting-link>
+                                                <x-backend.settings.setting-link
+                                                    route="{{ route('setting.security') }}">
+                                                    <x-backend.icon icons="ni-lock-alt-fill"/>
+                                                    <span>Security Settings</span>
+                                                </x-backend.settings.setting-link>
                                             </ul>
                                         </div>
                                     </div>
