@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use App\Enums\UserTypeEnum;
 use App\Models\University;
+
 use function Pest\Laravel\get;
 use function Pest\Laravel\post;
 

@@ -3,8 +3,8 @@
 declare(strict_types=1);
 
 use App\Http\Controllers\Admins\DashboardController;
-use App\Http\Controllers\Admins\Process\ProcessController;
-use App\Http\Controllers\Admins\Process\StoreProcessController;
+use App\Http\Controllers\Admins\Schools\CreateSchoolController;
+use App\Http\Controllers\Admins\SettingController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Middleware\UniversityMiddleware;
 use App\Http\Middleware\UserStatusMiddleware;
@@ -26,10 +26,13 @@ Route::middleware(['auth', 'verified', UserStatusMiddleware::class])->group(func
         Route::delete('/profile', [ProfileController::class, 'destroy'])
             ->name('profile.destroy');
     });
+    Route::group(['prefix' => 'setting', 'as' => 'setting.',], function () {
+        Route::get('/', SettingController::class)
+            ->name('index')
+            ->middleware(UniversityMiddleware::class);
+        Route::get('school', CreateSchoolController::class)->name('school-create');
+    });
 
-
-    Route::get('process', ProcessController::class)->name('process.index');
-    Route::post('process', StoreProcessController::class)->name('store-process');
 });
 
 

@@ -86,6 +86,6 @@ final class User extends Authenticatable
 
     public function hasConfiguredApplication(): bool
     {
-        return is_null($this->university_id);
+        return null === $this->university_id;
     }
 }

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Pipeline\Users;
 
 use App\Enums\UserTypeEnum;
@@ -16,7 +18,7 @@ class StudentUniversity
      */
     public function handle(User $user, Closure $next): mixed
     {
-        if (request()->input('user_type') === UserTypeEnum::USER_STUDENT) {
+        if (UserTypeEnum::USER_STUDENT === request()->input('user_type')) {
             $user->update([
                 'university_id' => University::query()
                     ->where('name', '=', 'Vinco')

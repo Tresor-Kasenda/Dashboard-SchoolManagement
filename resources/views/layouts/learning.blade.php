@@ -80,5 +80,6 @@
 
 <script src="{{ asset('js/bundle.js') }}"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
+@include('sweetalert::alert')
 </body>
 </html>

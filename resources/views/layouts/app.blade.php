@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet">
     @vite(['resources/css/backend/backend.css'])
+    @include('sweetalert::alert')
 </head>
 <body class="font-sans antialiased">
 <div class="nk-main">

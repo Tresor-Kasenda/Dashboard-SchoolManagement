@@ -33,7 +33,7 @@ final class PermissionSeeder extends Seeder
         ];
 
         collect($permissions)
-            ->each(fn($permission) => Permission::create([
+            ->each(fn ($permission) => Permission::create([
                 'name' => $permission,
                 'guard_name' => 'web',
             ]));

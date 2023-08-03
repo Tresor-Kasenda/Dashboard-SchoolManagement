@@ -23,9 +23,8 @@ final class UniversityMiddleware
     {
         if (
             null === Auth::user()->university_id &&
-            $request->user()->user_type === UserTypeEnum::USER_SCHOOL_MANAGEMENT
+            UserTypeEnum::USER_SCHOOL_MANAGEMENT === $request->user()->user_type
         ) {
-            dd($request);
             return to_route('process.index');
         }
 

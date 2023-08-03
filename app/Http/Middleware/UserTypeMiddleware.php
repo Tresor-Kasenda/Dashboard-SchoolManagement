@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Middleware;
 
 use App\Enums\UserTypeEnum;
@@ -19,7 +21,7 @@ class UserTypeMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if ($request->user()->user_type === UserTypeEnum::USER_STUDENT) {
+        if (UserTypeEnum::USER_STUDENT === $request->user()->user_type) {
 
         }
 

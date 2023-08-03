@@ -18,7 +18,7 @@ class AssignRoleToUser
      */
     public function handle(User $user, Closure $next): mixed
     {
-        if ($user->user_type === UserTypeEnum::USER_SCHOOL_MANAGEMENT) {
+        if (UserTypeEnum::USER_SCHOOL_MANAGEMENT === $user->user_type) {
             $user->assignRole(
                 Role::where('name', '=', 'admin')->first()
             );
